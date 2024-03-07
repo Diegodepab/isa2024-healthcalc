@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 @DisplayName("Tests para la calculadora de salud.")
 public class HealthCalcTest {
 
-	private HealthCalc calcu;
+	private final HealthCalcImpl calcu = new HealthCalcImpl();
 	///////////////////////////////////////////////////////////////////////////
 	//////////////idealWeight() test /////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
@@ -18,7 +18,7 @@ public class HealthCalcTest {
 	@DisplayName("Test de Altura Negativa IW")
 	public void testAlturaNegativaIW() {
 		assertThrows(IllegalArgumentException.class, 
-		() -> calcu.idealWeight(-5, 'm'), 
+		() -> calcu.idealWeight(-5, 'M'), 
 		"La altura introducida es negativa");
 	}
 	//2
@@ -26,15 +26,15 @@ public class HealthCalcTest {
 	@DisplayName("Test de Altura menor a la esperada IW")
 	public void testAlturaMenorPosibleIW() {
 		assertThrows(IllegalArgumentException.class, 
-		() -> calcu.idealWeight(20, 'm'), 
-		"La altura introducida es menor a la esperada, recuerda que es altura en cm");
+		() -> calcu.idealWeight(20, 'M'), 
+		"La altura introducida es menor a la esperada la formula da errores con valores lejanos al promedio, recuerda que es altura en cm");
 	}
 	//3
 	@Test
 	@DisplayName("Test de Altura mayor a la esperada IW")
 	public void testAlturaMayorPosibleIW() {
 		assertThrows(IllegalArgumentException.class, 
-		() -> calcu.idealWeight(300, 'm'), 
+		() -> calcu.idealWeight(300, 'M'), 
 		"La altura introducida es demasiado alta, revisa los valores introducidos");
 	}
 	//4
@@ -42,16 +42,16 @@ public class HealthCalcTest {
 	@DisplayName("Test de altura problematica con la formula hombres IW")
 	public void testAlturaProblemaHombresIW() {
 		assertThrows(IllegalArgumentException.class, 
-		() -> calcu.idealWeight(109, 'm'), 
-		"La formula da error con valores lejanos al promedio, mejor contacte con especialista");
+		() -> calcu.idealWeight(109, 'M'), 
+		"La altura introducida es menor a la esperada la formula da errores con valores lejanos al promedio, recuerda que es altura en cm");
 	}
 	//5
 	@Test
 	@DisplayName("Test de altura problematica con la formula mujeres IW")
 	public void testAlturaProblemaMujeresIW() {
 		assertThrows(IllegalArgumentException.class, 
-		() -> calcu.idealWeight(99, 'm'), 
-		"La formula da error con valores lejanos al promedio, mejor contacte con especialista");
+		() -> calcu.idealWeight(99, 'W'), 
+		"La altura introducida es menor a la esperada la formula da errores con valores lejanos al promedio, recuerda que es altura en cm");
 	}
 	//6
 	@Test
@@ -59,7 +59,7 @@ public class HealthCalcTest {
 	public void testGenderProblematicIW() {
 		assertThrows(IllegalArgumentException.class, 
 		() -> calcu.idealWeight(168, 'h'), 
-		"Solo se acepta entradas de 'w' for Woman (mujer) y 'm' for men (hombre) ");
+		"Solo se acepta entradas de 'w' for Woman (mujer) y 'm' for men (hombre)");
 	}
 	//7
 	@Test
@@ -100,13 +100,14 @@ public class HealthCalcTest {
 	@Test
 	@DisplayName("Test hombre especifico IW")
 	public void testHombreEspecificoIW() throws Exception{
-		assertEquals(63.5, calcu.idealWeight(168, 'w'));
+		assertEquals(63.5, calcu.idealWeight(168, 'M'));
+		
 	}
 	// 11
 	@Test
 	@DisplayName("Test mujer especifica IW")
 	public void testMujerEspecificaIW() throws Exception{
-		assertEquals(23, calcu.idealWeight(168, 'w'));
+		assertEquals(61, (Math.round(calcu.idealWeight(168, 'w'))));
 	}
 	///////////////////////////////////////////////////////////////////////////
 	//////////////basalMetabolicRate() test ///////////////////////////////////
