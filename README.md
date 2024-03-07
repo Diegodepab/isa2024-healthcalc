@@ -19,7 +19,7 @@ Se desea desarrollar una calculadora que permita estimar varios parámetros de s
   &nbsp; &nbsp; &nbsp; &nbsp;
   <img src="https://github.com/Diegodepab/isa2024-healthcalc/assets/91531665/d91005d7-e9a4-4e30-a7c6-32468afbca66" width="140" title="GitHub">
   &nbsp; &nbsp; &nbsp; &nbsp;
-  <img src="https://github.com/Diegodepab/isa2024-healthcalc/assets/91531665/2501b372-1fb2-46f6-b9a9-c5d67ab42d29" width="60" title="UMA">
+  <img src="https://github.com/Diegodepab/isa2024-healthcalc/assets/91531665/2501b372-1fb2-46f6-b9a9-c5d67ab42d29" width="140" title="UMA">
 </p>
 
 <a name="intro"></a>
@@ -40,8 +40,12 @@ En el capítulo ["A Self-Assessment Test"](https://informatica.cv.uma.es/pluginf
 - ***Test de altura problematica con la formula hombres*** `testAlturaProblemaHombresIW`:white_check_mark: Este test enfatiza el caso de obtener una altura que dentro de lo que cabe es posible pero la fórmula que sigue el peso ideal en hombres no está pensada para estos casos, pondré el tope en 110cm que da como resultado un peso ideal de 20kg (al usar alturas menores el peso ideal se vuelve ridículo o hasta negativo). En este caso se lanzara una excepción indicando que es un error de la formula.
 - ***Test de altura problematica con la formula mujeres*** `testAlturaProblemaMujeresIW`:white_check_mark: Este test enfatiza el caso de obtener una altura que dentro de lo que cabe es posible pero la fórmula que sigue el peso ideal en mujeres no está pensada para estos casos, pondré el tope en 100cm que da como resultado un peso ideal de 20kg (al usar alturas menores el peso ideal se vuelve ridículo o hasta negativo). En este caso se lanzara una excepción indicando que es un error de la formula.
 - ***Test de sexo erroneo*** `testGenderProblematicIW`:white_check_mark: Este test enfatiza el caso de obtener un genero distinto a ‘m’ o ‘w’, lo cual no será reconocido para el calculo del peso ideal.
-- ***Test hombre uso promedio*** `testHombrePromedioIW`:white_check_mark: Este test prueba el funcionamiento correcto en caso de uso por un hombre promedio (debería devolver su peso ideal).
-- ***Test mujer uso promedio*** `testMujerPromedioIW`:white_check_mark: Este test prueba el funcionamiento correcto en caso de uso por una mujer promedio (debería devolver su peso ideal).
+- ***Test entrada de sexo correcta*** `SexCorrectIW`:white_check_mark: Este test prueba que se pueda usar w, W, m y M como posibles entradas sin dar error.
+- ***Test hombre uso promedio*** `testHombrePromedioIW`:white_check_mark: Este test prueba el funcionamiento correcto en caso de uso por un hombre promedio evaluando a través de la formula en el propio test (debería devolver su peso ideal).
+- ***Test mujer uso promedio*** `testMujerPromedioIW`:white_check_mark: Este test prueba el funcionamiento correcto en caso de uso por una mujer promedio evaluando a través de la formula en el propio test (debería devolver su peso ideal).
+- ***Test hombre especifico*** `testHombreEspecificoIW`:white_check_mark: Este test prueba el funcionamiento correcto en caso de uso por un hombre especifico evaluando el resultado de manera manual y comparando el valor obtenido (debería devolver su peso ideal).
+- ***Test mujer especifica*** `testMujerEspecificaIW`:white_check_mark: Este test prueba el funcionamiento correcto en caso de uso por una mujer especifica evaluando el resultado de manera manual y comparando el valor obtenido (debería devolver su peso ideal).
+- ***Test entrada de sexo correcta*** `SexCorrectIW`:white_check_mark: Este test prueba el funcionamiento correcto en caso de uso por una mujer especifica evaluando el resultado de manera manual y comparando el valor obtenido (debería devolver su peso ideal).
 
 <a name="test_basalMetabolicRate"></a>
 ## Test para el método basalMetabolicRate():
