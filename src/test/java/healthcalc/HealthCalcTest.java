@@ -150,10 +150,10 @@ public class HealthCalcTest {
 	@Test //6
 	@DisplayName("Test entrada de TODOS los sexos BMR")
 	public void SexCorrectoBMR(){
-		assertDoesNotThrow(() -> calcu.basalMetabolicRate(60, 168, 'M', 2001));
-		assertDoesNotThrow(() -> calcu.basalMetabolicRate(60, 168, 'm', 2001));
-		assertDoesNotThrow(() -> calcu.basalMetabolicRate(60, 168, 'w', 2001));
-		assertDoesNotThrow(() -> calcu.basalMetabolicRate(60, 168, 'W', 2001));
+		assertDoesNotThrow(() -> calcu.basalMetabolicRate(60, 168, 'M', 21));
+		assertDoesNotThrow(() -> calcu.basalMetabolicRate(60, 168, 'm', 21));
+		assertDoesNotThrow(() -> calcu.basalMetabolicRate(60, 168, 'w', 21));
+		assertDoesNotThrow(() -> calcu.basalMetabolicRate(60, 168, 'W', 21));
 	}
 	@Test //7
 	@DisplayName("Test mujer promedio BMR")
@@ -173,7 +173,7 @@ public class HealthCalcTest {
 		float BMR = (float) (10 * 21 + 6.25 * 150 - 5 * 13 + 5);
 		assertEquals(BMR, calcu.basalMetabolicRate(21, 150, 'M', 13));
 
-		BMR = (float) (10 * 60 + 6.25 * 167 - 5 * 22 + 5);
+		BMR = (float) (10 * 65 + 6.25 * 167 - 5 * 22 + 5);
 		assertEquals(BMR, calcu.basalMetabolicRate(65, 167, 'M', 22));
 
 		BMR = (float) (10 * 80 + 6.25 * 170 - 5 * 55 + 5);
@@ -182,13 +182,13 @@ public class HealthCalcTest {
 	@Test //9 usando calculadora para contrastar la formula
 	@DisplayName("Test mujer Externa BMR")
 	public void testWomanExternaBMR() throws Exception{
-		assertEquals(1556.25, calcu.basalMetabolicRate(60, 169, 'W', 21));
+		assertEquals(1390.25, calcu.basalMetabolicRate(60, 169, 'W', 21));
 		
 	}
 	// 11
 	@Test
 	@DisplayName("Test hombre Externo BMR")
 	public void testMenExternoBMR() throws Exception{
-		assertEquals(1390.25, (calcu.basalMetabolicRate(60, 169, 'M', 21)));
+		assertEquals(1556.25, (calcu.basalMetabolicRate(60, 169, 'M', 21)));
 	}
 }
