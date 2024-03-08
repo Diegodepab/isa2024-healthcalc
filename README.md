@@ -71,8 +71,9 @@ A continuación una captura de todos los test pasados, para obtener más informa
 <a name="repo"> </a>
 # Desarrollo del repositorio:
 Durante el laboratorio, se utilizo `git` para trabajar de manera cómoda, eficiente y segura, pudiendo publicar continuamente los avances del proyecto, metodología muy útil para tener una mayor perspectiva de la linealidad del proyecto y poder retroceder en caso de equivocaciones. A través del comando gitk --all podemos ver la evolución de este repositorio resaltando los comentarios de cada avance. 
-
-(insertar gitk --all)
+<p align="center">
+  <img src="https://github.com/Diegodepab/isa2024-healthcalc/blob/main/Images/gitk__all.png" width="800" title="Resumen_Git">
+</p>
 
 Como se puede observar en esta ocasión es un proyecto muy simple sin una necesidad real de implementar multiples ramas o trabajar con compañeros, no obstante trabajar con `GitHub` fue una practica muy útil para marcar un rumbo en el proyecto. Se podría haber hecho en un número menor de commits pero quise desarrollar el README.md a la vez que iba avanzando en las clases y test por separado.
 
@@ -80,7 +81,7 @@ Como se puede observar en esta ocasión es un proyecto muy simple sin una necesi
 # Otros:
 ## Preparación del repositorio y modificaciones de versiones:
 Se trabajo en una version de java 17.0.2 2022-01-18 LTS, por ende se modifico el pom.xml y el org.eclipse.jdt.core.prefs de la carpeta de configuraciones.
-## Integrantes:
+## Estudiante:
 -Diego De Pablo ([User: Diegodepab](https://github.com/Diegodepab))
 ## Profesor:
 -José Miguel Horcas ([user:jmhorcas](https://github.com/jmhorcas))
