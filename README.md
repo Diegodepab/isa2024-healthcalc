@@ -53,9 +53,13 @@ En el capítulo ["A Self-Assessment Test"](https://informatica.cv.uma.es/pluginf
 - ***Test entrada incorrecta altura*** `testAlturaIncorrectaBMR`:dart: Este test enfatiza el caso de obtener un valor de altura incorrecto (solo se aceptaran valores dentro del umbral 40cm<X<275cm), se espera que en este caso se lance una excepción pidiendo al usuario revisar los datos ya que se espera un valor posible en cm.
 - ***Test entrada incorrecta sexo*** `testSexoIncorrectoBMR`:dart: Este test enfatiza el caso de obtener un valor de sexo incorrecto (solo se aceptaran valores correspondientes a 'm' y 'w'), se espera que en este caso se lance una excepción pidiendo al usuario revisar los datos ya que se espera un valor admisible.
 - ***Test entrada incorrecta edad*** `testEdadIncorrectaBMR`:dart: Este test enfatiza el caso de obtener un valor de edad incorrecto (solo se aceptaran valores dentro del umbral 0<X<100 años), se espera que en este caso se lance una excepción pidiendo al usuario revisar los datos ya que se espera un valor posible en años.
-- ***Test entradas raras*** `testBMR`:dart: Este test enfatiza el caso de obtener unos valores de entradas que haga al programa devolver una salida negativa, esto es posible al combinar características como una baja estatura, bajo peso, ser mujer y de una avanzada edad.
-- ***Test todo bien mujer*** `testWomanBMR`:dart: prueba el funcionamiento correcto en caso de uso por una mujer promedio (debería devolver su basalMetabolicRate).
-- ***Test todo bien hombre*** `testMenBMR`:dart: prueba el funcionamiento correcto en caso de uso por un hombre promedio (debería devolver su basalMetabolicRate).
+- ***Test entradas raras*** `testValoresRarosBMR`:dart: Este test enfatiza el caso de obtener unos valores de entradas que haga al programa devolver una salida negativa, esto es posible al combinar características como una baja estatura, bajo peso, ser mujer y de una avanzada edad.
+
+- ***Test entrada de TODOS los sexos*** `SexCorrectoBMR`:dart: Este test comprueba que la calculadora admite la entrada de sexos como w, W, m y M.
+- ***Test mujer promedio*** `testWomanBMR`:dart: prueba el funcionamiento correcto en caso de uso por una mujer promedio (debería devolver su basalMetabolicRate).
+- ***Test hombre promedio*** `testMenBMR`:dart: prueba el funcionamiento correcto en caso de uso por un hombre promedio (debería devolver su basalMetabolicRate).
+- ***Test mujer Externa*** `testWomanExternaBMR`:dart: prueba el funcionamiento correcto en caso de uso por una mujer pero esta vez se testea a partir de un resultado calculado fuera del propio entorno.
+- ***Test hombre Externo*** `testMenExternoBMR`:dart: prueba el funcionamiento correcto en caso de uso por un hombre pero esta vez se testea a partir de un resultado calculado fuera del propio entorno.
 
 <a name="ejecucion"></a>
 # Ejecución de los test:
