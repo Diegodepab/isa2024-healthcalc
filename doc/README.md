@@ -12,13 +12,13 @@ Esto vendría a ser un resumen más detallado del diagrama de casos de uso. Se c
 # Diagrama Simple:
 En este diagrama se muestra los diagramas de casos de uso en su forma más simple.
 <p align="center">
-  <img src="https://github.com/Diegodepab/isa2024-healthcalc/blob/main/Images/Esto_es_una_prueba.png" width="500" title="simple">
+  <img src="https://github.com/Diegodepab/isa2024-healthcalc/blob/practica2/doc/UML%20(simplificado).png" width="700" title="simple">
 </p>
 
 <a name="desarrollo"></a>
 # Diagrama más explicativo:
 En este diagrama se muestra con lujo de detalle todos los datos que puede introducir el usuario en los diversos casos de uso:
 <p align="center">
-  <img src="https://github.com/Diegodepab/isa2024-healthcalc/blob/main/Images/Test_Ideal_Weigth_ECLIPSE.png" width="750" title="Elaborado">
+  <img src="https://github.com/Diegodepab/isa2024-healthcalc/blob/practica2/doc/Diagrama_de_casos_de_uso_Calculadora_Salud.png" width="750" title="Elaborado">
 </p>
 

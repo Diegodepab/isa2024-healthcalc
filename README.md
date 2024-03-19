@@ -1,16 +1,22 @@
 # isa2024-healtcalc
-Se desea desarrollar una calculadora que permita estimar varios parámetros de salud de una persona, como su peso ideal o su tasa metabólica basal (TMB).
+Se desea desarrollar una calculadora que permita estimar varios parámetros de salud de una persona, como su peso ideal, su tasa metabólica basal, entre otras funciones. Se recomienda usar la **Tabla de contenido** para visualizar las practicas por separado.
+
 
 <details>
   <summary>Tabla de Contenido</summary>
-    <ol>
-      <li><a href="#intro">Introducción</a></li>
-      <li><a href="#desarrollo">Desarrollo de tests</a></li>
-      <li><a href="#test_idealWeight">Test idealWeight</a></li>
-      <li><a href="#test_basalMetabolicRate">Test basalMetabolicRate</a></li>
-      <li><a href="#ejecucion">Ejecución de los test</a></li>
-      <li><a href="#repo">Desarrollo del repositorio</a></li>
-      <li><a href="#otros">Autor, Profesor y otros detalles</a></li>
+  <ol>
+    <li><a href="#practica1">Practica1</a>
+      <ol> <li><a href="#intro">Introducción</a></li>
+        <li><a href="#desarrollo">Desarrollo de tests</a></li>
+        <li><a href="#test_idealWeight">Test idealWeight</a></li>
+        <li><a href="#test_basalMetabolicRate">Test basalMetabolicRate</a></li>
+        <li><a href="#ejecucion">Ejecución de los test</a></li>
+        <li><a href="#repo">Desarrollo del repositorio practica1</a></li></ol> </li>
+    <li><a href="#practica2">Practica2</a></li>
+      <ol> <li><a href="#intro2">Introducción</a>
+        <li><a href="#diagrama">Diagrama de casos:</a></li>
+        <li><a href="#caso_uso">especificación del caso de uso</a></li></ol> </li>
+    <li><a href="#otros">Autor, Profesor y otros detalles</a></a>
     </ol>
 </details>
 
@@ -21,6 +27,10 @@ Se desea desarrollar una calculadora que permita estimar varios parámetros de s
   &nbsp; &nbsp; &nbsp; &nbsp;
   <img src="https://github.com/Diegodepab/isa2024-healthcalc/assets/91531665/2501b372-1fb2-46f6-b9a9-c5d67ab42d29" width="140" title="UMA">
 </p>
+
+---
+# Práctica 1 
+<a name="practica1"></a>
 
 <a name="intro"></a>
 # Introducción:
@@ -76,6 +86,29 @@ Durante el laboratorio, se utilizo `git` para trabajar de manera cómoda, eficie
 </p>
 
 Como se puede observar en esta ocasión es un proyecto muy simple sin una necesidad real de implementar multiples ramas o trabajar con compañeros, no obstante trabajar con `GitHub` fue una practica muy útil para marcar un rumbo en el proyecto. Se podría haber hecho en un número menor de commits pero quise desarrollar el README.md a la vez que iba avanzando en las clases y test por separado.
+
+---
+    
+<a name="practica2"></a>
+# Práctica 2
+# Introducción 
+<a name="intro2"></a>
+Esta practica es relativamente simple, en primer lugar consiste en **Gestión de respositorio git y Github** donde se crearán las ramas correspondientes a la practica 1 y practica 2, seguida por **La realización deun diagrama de casos de uso UML para la calculadora de salud** según lo visto en el tema 2, donde se usará la calculadora de la practica 1 más 2 funciones nuevas en caso de este trabajo:
+1. La primera es calcular **el índice de masa corporal (IMB).** El IMB de una persona se calcula mediante la siguiente fórmula: `BMI = mass (kg) / height^2(m) `.
+2. La segunda función será la **estimación de la tasa de filtración glomerular mediante la ecuación CKD-EPI en adultos (TFG).** El [TFG](https://pubmed.ncbi.nlm.nih.gov/19414839/) de una persona se estima mediante la siguiente formula `TFG = 141 * Math.min(Creatinina sérica/kappa, 1)^alpha * Math.max(Creatinina sérica/kappa,1)^-1.209 * 0.993*Edad * Sexo * Raza`.
+*  Donde  para **mujeres**, se utilizan los siguientes valores: Sexo = 1.018; alfa = -0.329; kappa = 0.7, para **hombres** se utilizan los siguientes valores: Sexo = 1; alfa = -0.411; kappa = 0.9.
+*  Si eres una **persona de tez morena** (Negro) raza tiene un valor de 1.159 si eres **persona de tez clara** (blanco, caucásico, normal, etc.) tienes un valor de 1
+
+Y para culminar la practica se especificara uno de los casos de uso. 
+<a name="diagrama"></a>
+# Diagrama de casos de uso:
+En este diagrama se muestra con lujo de detalle todos los datos que puede introducir el usuario en los diversos casos de uso, dentro del README de doc, podrá obtener una segunda versión simplificada.
+<p align="center">
+  <img src="https://github.com/Diegodepab/isa2024-healthcalc/blob/practica2/doc/Diagrama_de_casos_de_uso_Calculadora_Salud.png" width="750" title="Elaborado">
+</p>
+
+<a name="caso_uso"></a>
+# Caso de uso a detalle:
 
 <a name="otros"> </a>
 # Otros:
