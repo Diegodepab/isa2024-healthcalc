@@ -1,7 +1,6 @@
 # isa2024-healtcalc
 Se desea desarrollar una calculadora que permita estimar varios parámetros de salud de una persona, como su peso ideal, su tasa metabólica basal, entre otras funciones. Se recomienda usar la **Tabla de contenido** para visualizar las practicas por separado.
 
-
 <details>
   <summary>Tabla de Contenido</summary>
   <ol>
@@ -108,8 +107,37 @@ En este diagrama se muestra con lujo de detalle todos los datos que puede introd
 </p>
 
 <a name="caso_uso"></a>
-# Caso de uso a detalle:
+# Especificación de Casos de Uso: función IdealWeight.:
 
+```
+Nombre: Calcular IdealWeight.
+
+Stakeholders y sus intereses/objetivos:
+Usuario: saber su peso ideal.
+Actor principal: Usuario. 
+
+Alcance: Aplicación HealthCalc (Calculadora de Salud).
+Nivel de abstracción: del tipo user-goal.
+Precondición: 
+-El usuario tiene que conocer los parámetros de altura y su sexo. (no puede empezar el escenario de uso si no conoce su altura o al menos conocimiento de valores que quiera introducir).
+Garantias mínima: Se muestra un mensaje de error o resultado al usuario.
+Garantías de éxito: El usuario obtiene un resultado correcto (su peso ideal).
+Trigger: El usuario indica que quiere calcular un peso ideal (selecciona la opción de calcular Peso Ideal en el programa HealthCalc).
+
+Escenario principal:
+1.	El usuario selecciona la opción de calcular Peso Ideal en el programa.
+2.	El sistema pide los parámetros (altura y sexo) al usuario. 
+3.	El usuario introduce los valores de los parámetros.
+4.	El sistema calcula su peso ideal.
+5.	El sistema muestra en pantalla el peso ideal para los parámetros dados.
+
+Escenario Alternativos:
+3b) el usuario se equivoca al introducir algún parámetro.
+3b1) El sistema muestra un error (especificando que campo tiene el error y una posible razón) y vuelve al paso 2.
+
+
+#nota, en las pruebas se fue muy escrupuloso con los posibles casos, y al ponerle umbrales de valores mínimos y máximos no debería haber escenarios alternativos por parte de errores en el sistema (desbordamiento o tiempo de ejecución demasiado largo).
+```
 <a name="otros"> </a>
 # Otros:
 ## Preparación del repositorio y modificaciones de versiones:
