@@ -1,0 +1,65 @@
+///////////////////////////////////////////////////////////////////////////
+User Story:  Cálculo del peso ideal de un persona.
+///////////////////////////////////////////////////////////////////////////
+
+Plantilla de historias de usuario(User Story Template):
+Como usuario de la calculadora de salud (As a user of the health calculator).
+Quiero calcular el peso ideal para los parámetros dados (I want to calculate the ideal weight for the given parameters)
+Para poder saber el peso ideal (So that I can know the ideal weight.).
+
+Criterios de aceptación (Accepting Criteria, lo dejaré en inglés para ahorrarme trabajo):
+Scenario Outline: Invalid Height
+Given I have an health calculator
+When I estimate the ideal weight for invalid height <h>
+Then the calculator throws an exception
+
+Scenario Outline: Invalid Gender
+Given I have an health calculator
+When I estimate the ideal weight for an invalid gender <g>
+Then the calculator throws an exception
+
+Scenario Outline: Negative Weight Result
+Given I have an health calculator
+When I estimate the ideal weight for gender <g> and height <h> and gives a negative result
+Then the calculator throws an exception
+
+Scenario Outline: ideal Weight Result
+Given I have an health calculator
+When I estimate the ideal weight for gender <g> and height <h>
+Then the calculator return a result <value>
+
+
+///////////////////////////////////////////////////////////////////////////
+User Story: Cálculo de la tasa metabólica basal de una persona
+///////////////////////////////////////////////////////////////////////////
+
+Plantilla de historias de usuario(User Story Template):
+Como usuario de la calculadora de salud (As a user of the health calculator).
+Quiero calcular la tasa metabólica basal para los parámetros dados (I want to calculate the basal metabolic rate for the given parameters).
+Para poder saber la tasa metabólica basal(So that I can know the basal metabolic rate).
+
+Criterios de aceptación (Accepting Criteria, lo dejaré en inglés para ahorrarme trabajo):
+Scenario Outline: Invalid Height
+Given  I have an health calculator
+When I estimate the basal metabolic rate of an invalid Height <h>
+Then the calculator throws an exception
+
+Scenario Outline: Invalid Weight
+Given  I have an health calculator
+When I estimate the basal metabolic rate of an invalid gender <g>
+Then the calculator throws an exception
+
+Scenario Outline: Invalid Age
+Given  I have an health calculator
+When  I estimate the basal metabolic rate of a negative age <a>
+Then the calculator throws an exception
+
+Scenario Outline: Invalid Weight
+Given  I have an health calculator
+When I estimate the basal metabolic rate of an invalid weight <w>
+Then the calculator throws an exception
+
+Scenario Outline: Given valid parameters
+Given  I have an health calculator
+When I estimate the basal metabolic rate for the given valid parameters <w> , <h> , <g> , <a>
+Then the calculator returns a valid result <result>

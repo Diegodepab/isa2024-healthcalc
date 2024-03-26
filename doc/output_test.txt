@@ -1,0 +1,210 @@
+﻿[INFO] Scanning with projects...
+[INFO] 
+[INFO] -------------------------< uma.isa:HealthCalc >-------------------------
+[INFO] Building HealthCalc 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ HealthCalc ---
+[INFO] skip non existing resourceDirectory c:\Documentos\Universidad\cuatrimestre\SoftAvan\isa2024-healthcalc\src\main\resources
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ HealthCalc ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ HealthCalc ---
+[INFO] Copying 2 resources from src\test\resources to target\test-classes
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ HealthCalc ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ HealthCalc ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatwithm.JUnitPlatwithmProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running healthcalc.bdd.RunCucumberTest
+
+@tag @tag1
+Scenario Outline: Invalid Height                                    # feature/bmr.feature:31
+  Given I have an health calculator                                 # healthcalc.bdd.StepDefinitions.i_have_an_health_calculator()
+  When  I estimate the basal metabolic rate of an invalid Height -15 # healthcalc.bdd.StepDefinitions.i_estimate_the_basal_metabolic_rate_with_invalid_height(java.lang.Integer)
+  Then the calculator throws an exception                               # healthcalc.bdd.StepDefinitions.the_calculator_throws_an_exception()
+
+@tag @tag1
+Scenario Outline: Invalid Height                                    # feature/bmr.feature:32
+  Given I have an health calculator                                 # healthcalc.bdd.StepDefinitions.i_have_an_health_calculator()
+  When I estimate the basal metabolic rate with an invalid height -1 # healthcalc.bdd.StepDefinitions.i_estimate_the_basal_metabolic_rate_with_invalid_height(java.lang.Integer)
+  Then the calculator throws an exception                               # healthcalc.bdd.StepDefinitions.the_calculator_throws_an_exception()
+
+@tag @tag1
+Scenario Outline: Invalid Height                                  # feature/bmr.feature:33
+  Given I have an health calculator                               # healthcalc.bdd.StepDefinitions.i_have_an_health_calculator()
+  When I estimate the basal metabolic rate with an invalid height -12 # healthcalc.bdd.StepDefinitions.i_estimate_the_basal_metabolic_rate_with_invalid_height(java.lang.Integer)
+  Then the calculator throws an exception                             # healthcalc.bdd.StepDefinitions.the_calculator_throws_an_exception()
+
+@tag @tag2
+Scenario Outline: Invalid Weight                                    # feature/bmr.feature:43
+  Given I have an health calculator                                 # healthcalc.bdd.StepDefinitions.i_have_an_health_calculator()
+  When I estimate the basal metabolic rate with an invalid gender 'h' # healthcalc.bdd.StepDefinitions.i_estimate_the_basal_metabolic_rate_with_invalid_gender_h(java.lang.String)
+  Then the calculator throws an exception                               # healthcalc.bdd.StepDefinitions.the_calculator_throws_an_exception()
+
+@tag @tag2
+Scenario Outline: Invalid Weight                                    # feature/bmr.feature:44
+  Given I have an health calculator                                 # healthcalc.bdd.StepDefinitions.i_have_an_health_calculator()
+  When I estimate the basal metabolic rate with an invalid gender '.' # healthcalc.bdd.StepDefinitions.i_estimate_the_basal_metabolic_rate_with_invalid_gender_h(java.lang.String)
+  Then the calculator throws an exception                               # healthcalc.bdd.StepDefinitions.the_calculator_throws_an_exception()
+
+@tag @tag2
+Scenario Outline: Invalid Weight                                    # feature/bmr.feature:45
+  Given I have an health calculator                                 # healthcalc.bdd.StepDefinitions.i_have_an_health_calculator()
+  When I estimate the basal metabolic rate with an invalid gender '9' # healthcalc.bdd.StepDefinitions.i_estimate_the_basal_metabolic_rate_with_invalid_gender_h(java.lang.String)
+  Then the calculator throws an exception                               # healthcalc.bdd.StepDefinitions.the_calculator_throws_an_exception()
+
+@tag @tag3
+Scenario Outline: Invalid Age                                    # feature/bmr.feature:55
+  Given I have an health calculator                              # healthcalc.bdd.StepDefinitions.i_have_an_health_calculator()
+  When I estimate the basal metabolic rate with a negative age -87 # healthcalc.bdd.StepDefinitions.i_estimate_the_basal_metabolic_rate_with_negative_age(java.lang.Integer)
+  Then the calculator throws an exception                            # healthcalc.bdd.StepDefinitions.the_calculator_throws_an_exception()
+
+@tag @tag3
+Scenario Outline: Invalid Age                                   # feature/bmr.feature:56
+  Given I have an health calculator                             # healthcalc.bdd.StepDefinitions.i_have_an_health_calculator()
+  When I estimate the basal metabolic rate with a negative age -4 # healthcalc.bdd.StepDefinitions.i_estimate_the_basal_metabolic_rate_with_negative_age(java.lang.Integer)
+  Then the calculator throws an exception                           # healthcalc.bdd.StepDefinitions.the_calculator_throws_an_exception()
+
+@tag @tag3
+Scenario Outline: Invalid Age                                   # feature/bmr.feature:57
+  Given I have an health calculator                             # healthcalc.bdd.StepDefinitions.i_have_an_health_calculator()
+  When I estimate the basal metabolic rate with a negative age -1 # healthcalc.bdd.StepDefinitions.i_estimate_the_basal_metabolic_rate_with_negative_age(java.lang.Integer)
+  Then the calculator throws an exception                           # healthcalc.bdd.StepDefinitions.the_calculator_throws_an_exception()
+
+@tag @tag4
+Scenario Outline: Invalid Weight                                   # feature/bmr.feature:67
+  Given I have an health calculator                                # healthcalc.bdd.StepDefinitions.i_have_an_health_calculator()
+  When I estimate the basal metabolic rate with an invalid weight -8 # healthcalc.bdd.StepDefinitions.i_estimate_the_basal_metabolic_rate_with_invalid_weight(java.lang.Integer)
+  Then the calculator throws an exception                              # healthcalc.bdd.StepDefinitions.the_calculator_throws_an_exception()
+
+@tag @tag4
+Scenario Outline: Invalid Weight                                    # feature/bmr.feature:68
+  Given I have an health calculator                                 # healthcalc.bdd.StepDefinitions.i_have_an_health_calculator()
+  When I estimate the basal metabolic rate with an invalid weight -57 # healthcalc.bdd.StepDefinitions.i_estimate_the_basal_metabolic_rate_with_invalid_weight(java.lang.Integer)
+  Then the calculator throws an exception                               # healthcalc.bdd.StepDefinitions.the_calculator_throws_an_exception()
+
+@tag @tag4
+Scenario Outline: Invalid Weight                                  # feature/bmr.feature:69
+  Given I have an health calculator                               # healthcalc.bdd.StepDefinitions.i_have_an_health_calculator()
+  When I estimate the basal metabolic rate with an invalid weight 0 # healthcalc.bdd.StepDefinitions.i_estimate_the_basal_metabolic_rate_with_invalid_weight(java.lang.Integer)
+  Then the calculator throws an exception                             # healthcalc.bdd.StepDefinitions.the_calculator_throws_an_exception()
+
+@tag @tag5
+Scenario Outline: Given valid parameters                                                     # feature/bmr.feature:91
+  Given I have an health calculator                                                          # healthcalc.bdd.StepDefinitions.i_have_an_health_calculator()
+  When I estimate the basal metabolic rate with the given valid parameters 72 , 189 , 'w' , 45 # healthcalc.bdd.StepDefinitions.i_estimate_the_basal_metabolic_rate_with_the_given_valid_parameters(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.Integer)
+  Then the calculator returns a valid result '1515.25'                                           # healthcalc.bdd.StepDefinitions.the_calculator_returns_a_valid_result(java.lang.String)
+
+@tag @tag5
+Scenario Outline: Given valid parameters                                                     # feature/bmr.feature:92
+  Given I have an health calculator                                                          # healthcalc.bdd.StepDefinitions.i_have_an_health_calculator()
+  When I estimate the basal metabolic rate with the given valid parameters 90 , 210 , 'm' , 34 # healthcalc.bdd.StepDefinitions.i_estimate_the_basal_metabolic_rate_with_the_given_valid_parameters(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.Integer)
+  Then the calculator returns a valid result '2047.5'                                            # healthcalc.bdd.StepDefinitions.the_calculator_returns_a_valid_result(java.lang.String)
+
+@tag @tag5
+Scenario Outline: Given valid parameters                                                    # feature/bmr.feature:93
+  Given I have an health calculator                                                         # healthcalc.bdd.StepDefinitions.i_have_an_health_calculator()
+  When I estimate the basal metabolic rate with the given valid parameters 46 , 134 , 'm' , 9 # healthcalc.bdd.StepDefinitions.i_estimate_the_basal_metabolic_rate_with_the_given_valid_parameters(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.Integer)
+  Then the calculator returns a valid result '1257.5'                                           # healthcalc.bdd.StepDefinitions.the_calculator_returns_a_valid_result(java.lang.String)
+
+@tag @tag1
+Scenario Outline: Invalid Height                          # feature/idealweight.feature:32
+  Given I have an health calculator                       # healthcalc.bdd.StepDefinitions.i_have_an_health_calculator()
+  When I estimate the ideal weight with negative height -10 # healthcalc.bdd.StepDefinitions.i_estimate_the_ideal_weight_with_negative_height(java.lang.Integer)
+  Then the calculator throws an exception                     # healthcalc.bdd.StepDefinitions.the_calculator_throws_an_exception()
+
+@tag @tag1
+Scenario Outline: Invalid Height                         # feature/idealweight.feature:33
+  Given I have an health calculator                      # healthcalc.bdd.StepDefinitions.i_have_an_health_calculator()
+  When I estimate the ideal weight with negative height -5 # healthcalc.bdd.StepDefinitions.i_estimate_the_ideal_weight_with_negative_height(java.lang.Integer)
+  Then the calculator throws an exception                    # healthcalc.bdd.StepDefinitions.the_calculator_throws_an_exception()
+
+@tag @tag1
+Scenario Outline: Invalid Height                        # feature/idealweight.feature:34
+  Given I have an health calculator                     # healthcalc.bdd.StepDefinitions.i_have_an_health_calculator()
+  When I estimate the ideal weight with negative height 0 # healthcalc.bdd.StepDefinitions.i_estimate_the_ideal_weight_with_negative_height(java.lang.Integer)
+  Then the calculator throws an exception                   # healthcalc.bdd.StepDefinitions.the_calculator_throws_an_exception()
+
+@tag @tag2
+Scenario Outline: Invalid Gender                            # feature/idealweight.feature:44
+  Given I have an health calculator                         # healthcalc.bdd.StepDefinitions.i_have_an_health_calculator()
+  When I estimate the ideal weight with an invalid gender 'n' # healthcalc.bdd.StepDefinitions.i_estimate_the_ideal_weight_with_invalid_gender(java.lang.String)
+  Then the calculator throws an exception                       # healthcalc.bdd.StepDefinitions.the_calculator_throws_an_exception()
+
+@tag @tag2
+Scenario Outline: Invalid Gender                            # feature/idealweight.feature:45
+  Given I have an health calculator                         # healthcalc.bdd.StepDefinitions.i_have_an_health_calculator()
+  When I estimate the ideal weight with an invalid gender 'y' # healthcalc.bdd.StepDefinitions.i_estimate_the_ideal_weight_with_invalid_gender(java.lang.String)
+  Then the calculator throws an exception                       # healthcalc.bdd.StepDefinitions.the_calculator_throws_an_exception()
+
+@tag @tag2
+Scenario Outline: Invalid Gender                            # feature/idealweight.feature:46
+  Given I have an health calculator                         # healthcalc.bdd.StepDefinitions.i_have_an_health_calculator()
+  When I estimate the ideal weight with an invalid gender '4' # healthcalc.bdd.StepDefinitions.i_estimate_the_ideal_weight_with_invalid_gender(java.lang.String)
+  Then the calculator throws an exception                       # healthcalc.bdd.StepDefinitions.the_calculator_throws_an_exception()
+
+@tag @tag3
+Scenario Outline: Negative Weight Result                                                   # feature/idealweight.feature:56
+  Given I have an health calculator                                                        # healthcalc.bdd.StepDefinitions.i_have_an_health_calculator()
+  When I estimate the ideal weight with gender 'm' and height 83 and gives a negative result # healthcalc.bdd.StepDefinitions.i_estimate_the_ideal_weight_with_gender_and_height_and_gives_a_negative_result(java.lang.String,java.lang.Integer)
+  Then the calculator throws an exception                                                      # healthcalc.bdd.StepDefinitions.the_calculator_throws_an_exception()
+
+@tag @tag3
+Scenario Outline: Negative Weight Result                                                   # feature/idealweight.feature:57
+  Given I have an health calculator                                                        # healthcalc.bdd.StepDefinitions.i_have_an_health_calculator()
+  When I estimate the ideal weight with gender 'm' and height 40 and gives a negative result # healthcalc.bdd.StepDefinitions.i_estimate_the_ideal_weight_with_gender_and_height_and_gives_a_negative_result(java.lang.String,java.lang.Integer)
+  Then the calculator throws an exception                                                      # healthcalc.bdd.StepDefinitions.the_calculator_throws_an_exception()
+
+@tag @tag3
+Scenario Outline: Negative Weight Result                                                   # feature/idealweight.feature:58
+  Given I have an health calculator                                                        # healthcalc.bdd.StepDefinitions.i_have_an_health_calculator()
+  When I estimate the ideal weight with gender 'w' and height 66 and gives a negative result # healthcalc.bdd.StepDefinitions.i_estimate_the_ideal_weight_with_gender_and_height_and_gives_a_negative_result(java.lang.String,java.lang.Integer)
+  Then the calculator throws an exception                                                      # healthcalc.bdd.StepDefinitions.the_calculator_throws_an_exception()
+
+@tag @tag3
+Scenario Outline: Negative Weight Result                                                   # feature/idealweight.feature:59
+  Given I have an health calculator                                                        # healthcalc.bdd.StepDefinitions.i_have_an_health_calculator()
+  When I estimate the ideal weight with gender 'w' and height 30 and gives a negative result # healthcalc.bdd.StepDefinitions.i_estimate_the_ideal_weight_with_gender_and_height_and_gives_a_negative_result(java.lang.String,java.lang.Integer)
+  Then the calculator throws an exception                                                      # healthcalc.bdd.StepDefinitions.the_calculator_throws_an_exception()
+
+@tag @tag4
+Scenario Outline: Valid Paramenter Feasiable Result             # feature/idealweight.feature:69
+  Given I have an health calculator                             # healthcalc.bdd.StepDefinitions.i_have_an_health_calculator()
+  When I estimate the ideal weight with gender 'w' and height 170 # healthcalc.bdd.StepDefinitions.i_estimate_the_ideal_weight_with_gender_and_height(java.lang.String,java.lang.Integer)
+  Then the calculator return a feasible result '62'                 # healthcalc.bdd.StepDefinitions.the_calculator_return_a_feasible_result(java.lang.String)
+
+@tag @tag4
+Scenario Outline: Valid Paramenter Feasiable Result             # feature/idealweight.feature:70
+  Given I have an health calculator                             # healthcalc.bdd.StepDefinitions.i_have_an_health_calculator()
+  When I estimate the ideal weight with gender 'm' and height 170 # healthcalc.bdd.StepDefinitions.i_estimate_the_ideal_weight_with_gender_and_height(java.lang.String,java.lang.Integer)
+  Then the calculator return a feasible result '65'               # healthcalc.bdd.StepDefinitions.the_calculator_return_a_feasible_result(java.lang.String)
+
+@tag @tag4
+Scenario Outline: Valid Paramenter Feasiable Result             # feature/idealweight.feature:71
+  Given I have an health calculator                             # healthcalc.bdd.StepDefinitions.i_have_an_health_calculator()
+  When I estimate the ideal weight with gender 'm' and height 180 # healthcalc.bdd.StepDefinitions.i_estimate_the_ideal_weight_with_gender_and_height(java.lang.String,java.lang.Integer)
+  Then the calculator return a feasible result '68'               # healthcalc.bdd.StepDefinitions.the_calculator_return_a_feasible_result(java.lang.String)
+
+@tag @tag4
+Scenario Outline: Valid Paramenter Feasiable Result             # feature/idealweight.feature:72
+  Given I have an health calculator                             # healthcalc.bdd.StepDefinitions.i_have_an_health_calculator()
+  When I estimate the ideal weight with gender 'm' and height 174 # healthcalc.bdd.StepDefinitions.i_estimate_the_ideal_weight_with_gender_and_height(java.lang.String,java.lang.Integer)
+  Then the calculator return a feasible result '68'                 # healthcalc.bdd.StepDefinitions.the_calculator_return_a_feasible_result(java.lang.String)
+[INFO] Tests run: 33, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.650 s -- in healthcalc.bdd.RunCucumberTest
+[INFO] Running Tests para la calculadora de salud.
+[INFO] Tests run: 44, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.304 s -- in Tests para la calculadora de salud.
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 77, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
