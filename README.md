@@ -5,16 +5,22 @@ Se desea desarrollar una calculadora que permita estimar varios parámetros de s
   <summary>Tabla de Contenido</summary>
   <ol>
     <li><a href="#practica1">Practica1</a>
-      <ol> <li><a href="#intro">Introducción</a></li>
+      <ol> <li><a href="#intro">Introducción practica1</a></li>
         <li><a href="#desarrollo">Desarrollo de tests</a></li>
         <li><a href="#test_idealWeight">Test idealWeight</a></li>
         <li><a href="#test_basalMetabolicRate">Test basalMetabolicRate</a></li>
         <li><a href="#ejecucion">Ejecución de los test</a></li>
         <li><a href="#repo">Desarrollo del repositorio practica1</a></li></ol> </li>
     <li><a href="#practica2">Practica2</a></li>
-      <ol> <li><a href="#intro2">Introducción</a>
+      <ol> <li><a href="#intro2">Introducción practica2</a>
         <li><a href="#diagrama">Diagrama de casos:</a></li>
         <li><a href="#caso_uso">especificación del caso de uso</a></li></ol> </li>
+    <li><a href="#practica3">Practica3</a></li>
+      <ol> <li><a href="#intro3">Introducción practica3</a>
+      <li><a href="#Historiapeso">User Story:  Cálculo del peso ideal de un persona:</a></li>
+              <ol> <li><a href="#crit_acep1">Criterios de aceptación</a></li></ol> </li>
+      <li><a href="#Historibasal">User Story:  Cálculo de la tasa metabólica basal de una persona:</a></li>
+              <ol> <li><a href="#crit_acep2">Criterios de aceptación</a></li></ol></li></ol> </li>
     <li><a href="#otros">Autor, Profesor y otros detalles</a></a>
     </ol>
 </details>
@@ -138,6 +144,106 @@ Escenario Alternativos:
 
 #nota, en las pruebas se fue muy escrupuloso con los posibles casos, y al ponerle umbrales de valores mínimos y máximos no debería haber escenarios alternativos por parte de errores en el sistema (desbordamiento o tiempo de ejecución demasiado largo).
 ```
+---
+<a name="practica3"></a>
+# Práctica 3
+
+<p align="center">
+  <img src="https://github.com/cucumber-ltd/brand/blob/master/images/png/notm/cucumber-black/cucumber-black-256.png" width="256" title="CUCUMBER">
+</p>
+
+<a name="intro3"></a>
+# Introducción: 
+Las **historias de usuario** son descripciones breves de las funcionalidades del sistema desde la perspectiva del usuario, explicando de manera fácil y sencilla el funcionamiento de nuestro programa. A su vez se usará Cucumber que es una herramienta para automatizar pruebas BDD (Desarrollo Guiado por el Comportamiento). Es decir pruebas que se centran en el comportamiento del sistema y utiliza lenguaje natural para definir pruebas automatizadas.
+
+* **Objetivo:** Implementar historias de usuario y criterios de aceptación siguiendo la metodología BDD (Desarrollo Guiado por el Comportamiento), a través de Gherkin y Cucumber.
+* **Componentes:**
+  +  *Archivos .feature:* Contienen las implementaciones detalladas de los criterios de aceptación en Gherkin.
+  +   *Archivos .java:* Contienen el código de los pasos (steps) necesarios para ejecutar estas definiciones en pruebas automatizadas.
+  +   *Archivos .txt:* En el directorio ./docs/, contienen las definiciones en lenguaje natural de las historias de usuario y los criterios de aceptación, de igual manera al seguir con su lectura encontrará información en este README.md
+* **Estructura:**
+  +   *Historias de usuario:* Siguen la estructura "Como [user rol], Quiero [función], Para [beneficio]" para describir las necesidades y objetivos de los usuarios.
+  +   *Criterios de aceptación:* Se estructuran como "Dado que/GIVEN [contexto], Cuando/WHEN [acción], Entonces/THEN [resultado esperado]" para especificar el comportamiento esperado del sistema bajo diferentes condiciones.
+*  **Beneficios:**
+    +   Mejora la comunicación y colaboración entre los equipos de desarrollo y producto.
+    +   Promueve un enfoque en el comportamiento del sistema desde la perspectiva del usuario.
+    +   Fomenta la creación de pruebas automatizadas que validan el comportamiento del sistema.
+    +   Aumenta la calidad del software al detectar errores en las primeras etapas del desarrollo.
+
+<a name="Historiapeso"> </a>
+## User Story:  Cálculo del peso ideal de un persona.
+A continuación el use story siguiendo la plantilla, trabaje tanto en español como en inglés esta primera parte:
+```
+Plantilla de historias de usuario(User Story Template):
+Como usuario de la calculadora de salud (As a user of the health calculator).
+Quiero calcular el peso ideal para los parámetros dados (I want to calculate the ideal weight for the given parameters)
+Para poder saber el peso ideal (So that I can know the ideal weight.).
+```
+<a name="crit_acep1"> </a>
+## Accepting Criteria:  Cálculo del peso ideal de un persona.
+A continuación los criterios de aceptación, esto si lo deje en inglés por comodidad.
+```
+Criterios de aceptación (Accepting Criteria):
+Scenario Outline: Invalid Height
+Given I have an health calculator
+When I estimate the ideal weight for invalid height <h>
+Then the calculator throws an exception
+
+Scenario Outline: Invalid Gender
+Given I have an health calculator
+When I estimate the ideal weight for an invalid gender <g>
+Then the calculator throws an exception
+
+Scenario Outline: Negative Weight Result
+Given I have an health calculator
+When I estimate the ideal weight for gender <g> and height <h> and gives a negative result
+Then the calculator throws an exception
+
+Scenario Outline: ideal Weight Result
+Given I have an health calculator
+When I estimate the ideal weight for gender <g> and height <h>
+Then the calculator return a result <value>
+
+```
+<a name="Historibasal"> </a>
+## User Story:  Cálculo de la tasa metabólica basal de una persona
+A continuación el use story será muy parecido al caso de peso ideal porque como su nombre lo indica la idea es seguir una plantilla y un sistema que a pesar de estar en lenguaje natural el programa sea capaz de automatizar parte de los test (en mi caso tuve que hacer varias modificaciones, pero al menos te deja la base).
+```
+Plantilla de historias de usuario(User Story Template):
+Como usuario de la calculadora de salud (As a user of the health calculator).
+Quiero calcular la tasa metabólica basal para los parámetros dados (I want to calculate the basal metabolic rate for the given parameters).
+Para poder saber la tasa metabólica basal(So that I can know the basal metabolic rate).
+```
+<a name="crit_acep2"> </a>
+## Accepting Criteria:  Cálculo de la tasa metabólica basal de una persona
+Para finalizar la practica 3 los criterios de aceptación refente al cálculo de la tasa metabólica basal 
+```
+Scenario Outline: Invalid Height
+Given  I have an health calculator
+When I estimate the basal metabolic rate of an invalid Height <h>
+Then the calculator throws an exception
+
+Scenario Outline: Invalid Weight
+Given  I have an health calculator
+When I estimate the basal metabolic rate of an invalid gender <g>
+Then the calculator throws an exception
+
+Scenario Outline: Invalid Age
+Given  I have an health calculator
+When  I estimate the basal metabolic rate of a negative age <a>
+Then the calculator throws an exception
+
+Scenario Outline: Invalid Weight
+Given  I have an health calculator
+When I estimate the basal metabolic rate of an invalid weight <w>
+Then the calculator throws an exception
+
+Scenario Outline: Given valid parameters
+Given  I have an health calculator
+When I estimate the basal metabolic rate for the given valid parameters <w> , <h> , <g> , <a>
+Then the calculator returns a valid result <result>
+```
+
 <a name="otros"> </a>
 # Otros:
 ## Preparación del repositorio y modificaciones de versiones:
