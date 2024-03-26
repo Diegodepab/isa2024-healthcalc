@@ -59,3 +59,5 @@ I want to calculate my ideal weight based on the information I provide.
       |'w'| 170|'62'|
       |'m'| 170|'65'|
       |'m'| 174|'68' |
+
+      

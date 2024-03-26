@@ -19,9 +19,9 @@ public class StepDefinitions {
 	    calc= new HealthCalcImpl();
 	}
 	@When("I estimate the ideal weight for negative height {int}")
-	public void i_estimate_the_ideal_weight_for_negative_height(Integer int1) {
+	public void i_estimate_the_ideal_weight_for_negative_height(Integer inte) {
 		try {
-			calc.idealWeight(int1, 'm');
+			calc.idealWeight(inte, 'm');
 		}catch(Exception e) {
 			exception= true;
 		}
@@ -41,20 +41,68 @@ public class StepDefinitions {
 	}
 
 	@When("I estimate the ideal weight for gender {string} and height {int} and gives a negative result")
-	public void i_estimate_the_ideal_weight_for_gender_and_height_and_gives_a_negative_result(String string, Integer int1) {
+	public void i_estimate_the_ideal_weight_for_gender_and_height_and_gives_a_negative_result(String string, Integer inte) {
 		try {
-			calc.idealWeight(int1, string.toCharArray()[0]);
+			calc.idealWeight(inte, string.toCharArray()[0]);
 		}catch(Exception e) {
 			exception= true;
 		}
 	}
 
 	@When("I estimate the ideal weight for gender {string} and height {int}")
-	public void i_estimate_the_ideal_weight_for_gender_and_height(String string, Integer int1) throws Exception {
-	    result=calc.idealWeight(int1, string.toCharArray()[0]);
+	public void i_estimate_the_ideal_weight_for_gender_and_height(String string, Integer inte) throws Exception {
+	    result=calc.idealWeight(inte, string.toCharArray()[0]);
 	}
 	@Then("the calculator return a  result {string}")
 	public void the_calculator_return_a_result(String string) {
 		assertEquals(Float.parseFloat(string), result);
+	}
+
+	///////////////////////////////////////////////////////////////////////////
+	//////////////Basal metabolic rate /////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	@When("I estimate the basal metabolic rate with invalid hight {int}")
+	public void i_estimate_the_basal_metabolic_rate_with_invalid_hight(Integer inte) {
+		try {
+			calc.basalMetabolicRate(40, inte, 'm', 21);
+		}catch(Exception e) {
+			exception= true;
+		}
+	}
+
+	@When("I estimate the basal metabolic rate with invalid gender {string}")
+	public void i_estimate_the_basal_metabolic_rate_with_invalid_gender_h(String string) {
+		try {
+			calc.basalMetabolicRate(40, 150, string.toCharArray()[0], 21);
+		}catch(Exception e) {
+			exception= true;
+		}
+	}
+
+	@When("I estimate the basal metabolic rate with negative age {int}")
+	public void i_estimate_the_basal_metabolic_rate_with_negative_age(Integer inte) {
+		try {
+			calc.basalMetabolicRate(70, 140, 'w', inte);
+		}catch(Exception e) {
+			exception= true;
+		}
+	}
+
+	@When("I estimate the basal metabolic rate with invalid weight {int}")
+	public void i_estimate_the_basal_metabolic_rate_with_invalid_weight(Integer inte) {
+		try {
+			calc.basalMetabolicRate(inte, 170, 'w', 21);
+		}catch(Exception e) {
+			exception= true;
+		}
+	}
+
+	@When("I estimate the basal metabolic rate for the given valid parameters {int} , {int} , {string} , {int}")
+	public void i_estimate_the_basal_metabolic_rate_for_the_given_valid_parameters(Integer inte, Integer inte2, String str, Integer inte3) throws Exception {
+		result=calc.basalMetabolicRate(inte, inte2, str.toCharArray()[0], inte3);
+	}
+	@Then("the system returns a result {string}")
+	public void the_system_returns_a_result(String str) {
+		assertEquals(Float.parseFloat(str), result);
 	}
 }
