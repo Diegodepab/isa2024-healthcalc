@@ -18,7 +18,7 @@ I want to calculate my ideal weight based on the information I provide.
 
    	Examples: 
       | h |
-      |-1000|
+      |-100|
       |-1 |
       | 0 |
 
@@ -51,7 +51,7 @@ I want to calculate my ideal weight based on the information I provide.
   Scenario Outline: ideal Weight Result
     Given I have an health calculator
     When I estimate the ideal weight for gender <g> and height <h>
-    Then the system return a feasible result <value>
+    Then the calculator return a result <value>
 
    	Examples: 
       | g |  h | value |
