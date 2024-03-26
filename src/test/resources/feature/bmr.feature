@@ -3,9 +3,9 @@ Feature: Calculate Basal Metabolic Rate
   As a user of the health calculatorI want to calculate the basal metabolic rate according to the parameters entered so that I can know the resulting of this health measurement
 
   @tag1
-  Scenario Outline: Invalid Hight
+  Scenario Outline: Invalid Height
     Given  I have an health calculator
-    When I estimate the basal metabolic rate of an invalid hight <h>
+    When I estimate the basal metabolic rate of an invalid Height <h>
     Then the calculator throws an exception
 
     Examples: 

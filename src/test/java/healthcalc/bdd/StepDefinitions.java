@@ -18,6 +18,11 @@ public class StepDefinitions {
 	public void i_have_an_health_calculator() {
 	    calc= new HealthCalcImpl();
 	}
+
+		///////////////////////////////////////////////////////////////////////////
+	//////////////Peso ideal /////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+
 	@When("I estimate the ideal weight for negative height {int}")
 	public void i_estimate_the_ideal_weight_for_negative_height(Integer inte) {
 		try {
@@ -26,6 +31,7 @@ public class StepDefinitions {
 			exception= true;
 		}
 	}
+
 	@Then("the calculator throws an exception")
 	public void the_calculator_throws_an_exception() {
 		assertTrue(exception);
@@ -61,8 +67,8 @@ public class StepDefinitions {
 	///////////////////////////////////////////////////////////////////////////
 	//////////////Basal metabolic rate /////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
-	@When("I estimate the basal metabolic rate with invalid hight {int}")
-	public void i_estimate_the_basal_metabolic_rate_with_invalid_hight(Integer inte) {
+	@When("I estimate the basal metabolic rate with invalid ehight {int}")
+	public void i_estimate_the_basal_metabolic_rate_with_invalid_height(Integer inte) {
 		try {
 			calc.basalMetabolicRate(40, inte, 'm', 21);
 		}catch(Exception e) {
