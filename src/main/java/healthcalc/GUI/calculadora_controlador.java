@@ -43,7 +43,7 @@ public class calculadora_controlador implements ActionListener {
         int altura = vista.getAltura();
         char genero = vista.getGenero();
         float resultado = modelo.idealWeight(altura, genero);
-        vista.setResultPI(resultado);
+        vista.setResultText(resultado);
     }
 
     private void calcularBMR() throws Exception {
@@ -52,6 +52,6 @@ public class calculadora_controlador implements ActionListener {
         int edad = vista.getEdad();
         float peso = vista.getPeso();
         float resultado = modelo.basalMetabolicRate(peso, altura, genero, edad);
-        vista.setResultBMR(resultado);
+        vista.setResultText(resultado);
     }
 }

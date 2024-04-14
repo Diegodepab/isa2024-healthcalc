@@ -243,9 +243,9 @@ public class calculadora_vista {
                 JOptionPane.ERROR_MESSAGE);
 	}
 
-	public void setResultText(String text) {
-        resultado.setText(text);
-    }
+	public void setResultText(float resultado2) {
+	    resultado.setText(String.valueOf(resultado2));
+	}
 	
 
 }

@@ -253,7 +253,7 @@ Then the calculator returns a valid result <result>
 # Práctica 4
 
 <p align="center">
-  <img src="https://github.com/cucumber-ltd/brand/blob/master/images/png/notm/cucumber-black/cucumber-black-256.png" width="256" title="CUCUMBER">
+  <img src="https://github.com/Diegodepab/isa2024-healthcalc/blob/practica4/Images/Implementacion_vista_metabolic_rate.png" width="300" title="implemen_basal">
 </p>
 
 <a name="intro4"></a>
@@ -294,14 +294,33 @@ Siendo muy útil para tener una idea clara de que herramientas quieres usar y qu
 <a name="interfaz"> </a>
 ##  Interfaz gráfica de usuario para la calculadora de salud
 
- Esto tengo que añadir futuro
+La creación de la interfaz fue mucho más sencilla sabiendo el esquema por partes que tenía pensado con el prototipo, donde habiendo llegado a la hora de montar ya tenía una clara idea de que forma obtener los valores del usuario, en esta ocasión al ser la interfaz final voy a ser más detallado y también explicando que aunque se parezca mucho al prototipo no es exactamente igual por dos principales razones, la primera siendo la falta de experiencia y la importancia de un prototipo es que muestra el contraste de lo que me imaginaba antes de probar por primera vez por mi mismo window builder, sin saber sus limitaciones ni posibilidades. Y la segunda razón relacionada con la primera es que descubri que hay cosas que se pueden hacer muy facilmente, así que cosas como cambiar según lo que quieras calcular juega un rol más importante y se dejá más claro todo.
 
+A continuación una imagen de el programa apenas se inicia, resaltando que no sé ha elegido que deseas calcular inicialmente y esto se notifica al lado de resultado:
+
+<p align="center">
+  <img src="https://github.com/Diegodepab/isa2024-healthcalc/blob/practica4/Images/Implementacion_vista_vacio.png" width="400" title="inic">
+</p>
+
+siguiendo la linea de los hechos un ejemplo de como se vería ir rellenando la opción de peso ideal: 
+<p align="center">
+  <img src="https://github.com/Diegodepab/isa2024-healthcalc/blob/practica4/Images/Implementacion_vista_Ideal_Weight.png" width="400" title="imple_peso">
+</p>
+
+Y por último el caso donde se desea calcular la tasa metabolica:
+<p align="center">
+  <img src="https://github.com/Diegodepab/isa2024-healthcalc/blob/practica4/Images/Implementacion_vista_metabolic_rate.png" width="400" title="imple_metabolic">
+</p>
+Vemos que para cada caso se ajusta mostrando solamente los campos que puede meter el usuario dependiendo de la función que desea y que se actualiza las unidades y el valor de resultado dependiendo del método llamado.
 
 <a name="otros"> </a>
 # Otros:
+
 ## Preparación del repositorio y modificaciones de versiones:
 Para esta practica he actualizado el entorno de desarrollo para poder acceder a windowBuilder que con versiones inferiores a 17 estaba dandose un error de incompatibilidad a la hora de instalar el software
+
 ## Estudiante:
 -Diego De Pablo ([User: Diegodepab](https://github.com/Diegodepab))
+
 ## Profesor:
 -José Miguel Horcas ([user:jmhorcas](https://github.com/jmhorcas))
