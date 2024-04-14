@@ -17,6 +17,8 @@ public class calculadora_vista {
     private JRadioButton mujerRadioButton;
     private ButtonGroup actionButtonGroup;
     private ButtonGroup genderButtonGroup;
+    private JTextField resultado; // Nuevo JTextField para mostrar los resultados
+    private JLabel labelKg; // Nuevo JLabel para mostrar "kg"
 	/**
 	 * Launch the application.
 	 */
@@ -144,13 +146,27 @@ public class calculadora_vista {
         lblSexo.setFont(new Font("Times New Roman", Font.PLAIN, 18));
         lblSexo.setBounds(20, 94, 66, 24);
         frame.getContentPane().add(lblSexo);
+        
 
+        // Crear el JTextField para mostrar los resultados
+        resultado = new JTextField();
+        resultado.setEditable(false); // Hacer que el JTextField sea solo de lectura
+        resultado.setBounds(210, 220, 80, 40); 
+        frame.getContentPane().add(resultado);
+
+        labelKg = new JLabel("SELECT MODO");
+        labelKg.setFont(new Font("Times New Roman", Font.BOLD, 16));
+        labelKg.setBounds(300, 220, 120, 40); 
+        frame.getContentPane().add(labelKg);
+        
         // Action listeners para mostrar/ocultar campos de edad y peso según la acción seleccionada
+
         idealWeightRadioButton.addActionListener(e -> {
             txtAge.setVisible(false);
             lblAgeUnit.setVisible(false);
             txtWeight.setVisible(false);
             lblWeightUnit.setVisible(false);
+            labelKg.setText("kg"); // Restablecer el texto del JLabel a "kg" cuando se selecciona "Ideal Weight"
         });
 
         basalMetabolicRateRadioButton.addActionListener(e -> {
@@ -158,9 +174,78 @@ public class calculadora_vista {
             lblAgeUnit.setVisible(true);
             txtWeight.setVisible(true);
             lblWeightUnit.setVisible(true);
+            labelKg.setText("cal/día"); // Cambiar el texto del JLabel a "cal/día" cuando se selecciona "Basal Metabolic Rate"
         });
 	
-	
 	}
+    // Registrar Controlador
+    public void control(ActionListener act) {
+        idealWeightRadioButton.addActionListener(act);
+        idealWeightRadioButton.setActionCommand("getIdealWeight");
+
+        basalMetabolicRateRadioButton.addActionListener(act);
+        basalMetabolicRateRadioButton.setActionCommand("getBMR");
+
+        hombreRadioButton.addActionListener(act);
+        hombreRadioButton.setActionCommand("checkMale");
+
+        mujerRadioButton.addActionListener(act);
+        mujerRadioButton.setActionCommand("checkFemale");
+    }
+
+    
+    //Obtener valores
+    public int getEdad() {
+        try {
+            return Integer.parseInt(txtAge.getText());
+        } catch (NumberFormatException e) {
+            return 0; // En caso de error, devolver un valor predeterminado
+        }
+    }
+
+    public int getAltura() {
+        try {
+            return Integer.parseInt(txtHeight.getText());
+        } catch (NumberFormatException e) {
+            return 0; // En caso de error, devolver un valor predeterminado
+        }
+    }
+
+    public float getPeso() {
+        try {
+            return Float.parseFloat(txtWeight.getText());
+        } catch (NumberFormatException e) {
+            return 0; // En caso de error, devolver un valor predeterminado
+        }
+    }	
+
+
+	public char getGenero() {
+		if(mujerRadioButton.isSelected()) {
+			return 'w';
+		}else{
+			return 'm';
+		}
+	}
+
+	//tratamiento de errores
+	public void invalidInputs(String errCode) {
+		JOptionPane.showMessageDialog(frame,
+                errCode,
+                "Ingrese valores válidos para la altura, peso, género y edad",
+                JOptionPane.ERROR_MESSAGE);
+	}
+	
+	public void noInputsErr() {
+		JOptionPane.showMessageDialog(frame,
+                "Debe rellenar los campos necesarios antes de calcular",
+                "Ha sucedido un error",
+                JOptionPane.ERROR_MESSAGE);
+	}
+
+	public void setResultText(String text) {
+        resultado.setText(text);
+    }
+	
 
 }
