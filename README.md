@@ -291,6 +291,8 @@ Y la segunda es cuando el usuario quiere usar la calculadora para calcular la ta
 
 Siendo muy útil para tener una idea clara de que herramientas quieres usar y que funcionalidades quieres en tu programa, en este caso este prototipo nos ahorra tener que explicar mediante labels o asumir que el usuario sabrá que el peso ideal solo necesita 2 campos.
 
+De este prototipo más adelante aprendí que usar azul de fondo y el color de letras blanco queda fatal, más adelante cuando quise leer que decía no sabía, estas burbujas eran con intención bosquejo informativo y sin intención de implementar, pero me sirvió para aprender que la letra blanca trae problemas para fondos que no sean negro.
+
 <a name="interfaz"> </a>
 ##  Interfaz gráfica de usuario para la calculadora de salud
 
@@ -312,6 +314,8 @@ Y por último el caso donde se desea calcular la tasa metabolica:
   <img src="https://github.com/Diegodepab/isa2024-healthcalc/blob/practica4/Images/Implementacion_vista_metabolic_rate.png" width="400" title="imple_metabolic">
 </p>
 Vemos que para cada caso se ajusta mostrando solamente los campos que puede meter el usuario dependiendo de la función que desea y que se actualiza las unidades y el valor de resultado dependiendo del método llamado.
+
+Cabe resaltar que en la carpeta images añadí esto en el README, Pero un poco más detallado y hasta teniendo el lujo de dar ciertos pleonasmo (redundancia), y con mayor tamaño. 
 
 <a name="otros"> </a>
 # Otros:
