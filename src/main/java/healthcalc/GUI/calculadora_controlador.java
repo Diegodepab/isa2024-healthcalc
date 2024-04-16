@@ -3,11 +3,10 @@ package healthcalc.GUI;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import healthcalc.GUI.calculadora_vista;
 import healthcalc.HealthCalcImpl;
 
 public class calculadora_controlador implements ActionListener {
-    
+
     private HealthCalcImpl modelo;
     private calculadora_vista vista;
 
@@ -19,39 +18,34 @@ public class calculadora_controlador implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         String comando = e.getActionCommand();
-        try {
-            switch (comando) {
-                case "Calcular Peso Ideal":
-                    calcularPesoIdeal();
-                    break;
-                case "Calcular BMR":
-                    calcularBMR();
-                    break;
-                // Agregar más casos según sea necesario para manejar otros comandos
-                default:
-                    // Manejar comandos desconocidos o no implementados
-                    break;
+        if (comando.equals("getIdealWeight")) {
+            // idealWeight
+
+            int altura = vista.getAltura();
+            char genero = vista.getGenero();
+            try {
+                float resultado = modelo.idealWeight(altura, genero);
+                vista.setResultText(resultado);
+            } catch (Exception error) {
+                String msg = comando + ": " + error.getMessage();
+                vista.error(msg);
             }
-        } catch (NumberFormatException ex) {
-            vista.invalidInputs("Entrada inválida. Asegúrate de ingresar valores numéricos.");
-        } catch (Exception ex) {
-            vista.invalidInputs("Error al procesar el comando '" + comando + "': " + ex.getMessage());
+
+        } else if (comando.equals("getBMR")) {
+            int altura = vista.getAltura();
+            char genero = vista.getGenero();
+            int edad = vista.getEdad();
+            float peso = vista.getPeso();
+            try {
+                float resultado = modelo.basalMetabolicRate(peso, altura, genero, edad);
+                vista.setResultText(resultado);
+            } catch (Exception error) {
+                String msg = comando + ": " + error.getMessage();
+                vista.error(msg);
+            }
+
         }
+
     }
 
-    private void calcularPesoIdeal() throws Exception {
-        int altura = vista.getAltura();
-        char genero = vista.getGenero();
-        float resultado = modelo.idealWeight(altura, genero);
-        vista.setResultText(resultado);
-    }
-
-    private void calcularBMR() throws Exception {
-        int altura = vista.getAltura();
-        char genero = vista.getGenero();
-        int edad = vista.getEdad();
-        float peso = vista.getPeso();
-        float resultado = modelo.basalMetabolicRate(peso, altura, genero, edad);
-        vista.setResultText(resultado);
-    }
 }
