@@ -317,6 +317,7 @@ Vemos que para cada caso se ajusta mostrando solamente los campos que puede mete
 
 Cabe resaltar que en la carpeta images añadí esto en el README, Pero un poco más detallado y hasta teniendo el lujo de dar ciertos pleonasmo (redundancia), y con mayor tamaño. 
 
+Para la creación del archivo Jar, exploré desde el uso de Visual Studio Code y Eclipse para generarlo automaticamente como por medio de comandos en la consola, aunque el java me ha dado errores de versiones y no me deja ejecutar mi archivo .jar ni de mis compañeros ni de ejemplos de internet, tarde en subirlo pensando que era fallo de programación pero el desinstalar y volver instalar eclipse para arreglar el problema de instalación de windows builder me esta generando errores inesperados, lamento hacer unas modificaciones los minutos posteriores a la entrega pero es que tuve que esperar la respuesta de que el archivo funcionaba.
 <a name="otros"> </a>
 # Otros:
 
