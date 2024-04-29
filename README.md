@@ -25,6 +25,10 @@ Se desea desarrollar una calculadora que permita estimar varios parámetros de s
       <ol> <li><a href="#intro4">Introducción practica4</a>
         <li><a href="#prototipo"> Prototipo (Mockup):</a></li>
         <li><a href="#interfaz">interfaz</a></li></ol> </li>
+    <li><a href="#practica5">Practica5</a></li>
+      <ol> <li><a href="#intro5">Introducción practica5</a>
+        <li><a href="#CalcD"> Calculadora D:</a></li>
+        <li><a href="#CalcE"> Calculadora E:</a></li></ol> </li>
     <li><a href="#otros">Autor, Profesor y otros detalles</a></a>
     </ol>
 </details>
@@ -318,6 +322,30 @@ Vemos que para cada caso se ajusta mostrando solamente los campos que puede mete
 Cabe resaltar que en la carpeta images añadí esto en el README, Pero un poco más detallado y hasta teniendo el lujo de dar ciertos pleonasmo (redundancia), y con mayor tamaño. 
 
 Para la creación del archivo Jar, exploré desde el uso de Visual Studio Code y Eclipse para generarlo automaticamente como por medio de comandos en la consola, aunque el java me ha dado errores de versiones y no me deja ejecutar mi archivo .jar ni de mis compañeros ni de ejemplos de internet, tarde en subirlo pensando que era fallo de programación pero el desinstalar y volver instalar eclipse para arreglar el problema de instalación de windows builder me esta generando errores inesperados, lamento hacer unas modificaciones los minutos posteriores a la entrega pero es que tuve que esperar la respuesta de que el archivo funcionaba.
+
+<a name="practica5"> </a>
+# Practica 5: **Evaluación de Usabilidad de Aplicaciones de Calculadora de Salud**
+<a name="intro5"> </a>
+## Introducción:
+El objetivo de esta práctica es evaluar la usabilidad de dos aplicaciones de calculadora de salud desarrolladas por otros compañeros. Se utilizarán cuestionarios específicos para evaluar la usabilidad, basados en [la escala Likert](https://es.wikipedia.org/wiki/Escala_Likert) y en la solicitud de valores numéricos naturales.
+
+`1 = Strongly disagree. 2 = Disagree. 3 = Neutral. 4 = Agree. 5 = Strongly agree. `
+
+Podrá observar más en el pdf correspondiente a la carpeta **_evaluate_**
+<a name="CalcD"> </a> 
+## Calculadora D:
+La primera aplicación que me corresponde juzgar es la calculadora D, correspondiente a la siguiente:
+<p align="center">
+  <img src="https://github.com/Diegodepab/isa2024-healthcalc/blob/practica5/Images/practica5/Calculadora_D_.png" width="400" title="implemen_basal">
+</p>
+
+<a name="CalcE"> </a>
+## Calculadora E:
+La segunda aplicación a juzgar es la calculadora E, correspondiente a la siguiente:
+<p align="center">
+  <img src="https://github.com/Diegodepab/isa2024-healthcalc/blob/practica5/Images/practica5/Calculadora_E_.png" width="400" title="implemen_basal">
+</p>
+
 <a name="otros"> </a>
 # Otros:
 
