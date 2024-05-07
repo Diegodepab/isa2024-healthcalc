@@ -7,7 +7,7 @@ import healthcalc.HealthCalcImpl;
 
 public class calculadora_controlador implements ActionListener {
 
-    private HealthCalcImpl modelo;
+    private HealthCalcImpl modelo = HealthCalcImpl.getInstance();;
     private calculadora_vista vista;
 
     public calculadora_controlador(HealthCalcImpl modelo, calculadora_vista vista) {

@@ -346,6 +346,37 @@ La segunda aplicación a juzgar es la calculadora E, correspondiente a la siguie
   <img src="https://github.com/Diegodepab/isa2024-healthcalc/blob/practica5/Images/practica5/Calculadora_E_.png" width="400" title="implemen_basal">
 </p>
 
+
+#---------------------------------------------------------------------
+
+<a name="practica6"></a>
+# Práctica 6
+
+<p align="center">
+  <img src="https://github.com/Diegodepab/isa2024-healthcalc/blob/practica4/Images/Implementacion_vista_metabolic_rate.png" width="300" title="Patrones de diseño">
+</p>
+
+<a name="intro6"></a>
+# Introducción: 
+**Los patrones de diseño de software** son soluciones reutilizables a problemas comunes de diseño que se presentan durante el desarrollo de software. Proporcionan un vocabulario común para que los desarrolladores comuniquen ideas de diseño y promueven la reutilización de código probado.
+
+Existen una gran cantidad de patrones de diseños de diversas indoles y categorías, dando solución a muchos de los problemas que un ingeniero de software se puede enfrentar en su día a día, algunos podrían ser:
+* **Patrón singleton:**  restringe la creación de una clase a una sola instancia. Esto significa que solo existe una instancia de la clase en todo el programa. El patrón Singleton es útil cuando se necesita un acceso global a un recurso compartido, como una configuración de aplicación o un objeto de base de datos. 
+* **El patrón Adapter:**  permite que objetos con interfaces incompatibles colaboren entre sí. Convierte la interfaz de una clase en una interfaz compatible con otra clase. El patrón Adapter es útil cuando se necesita integrar componentes de terceros o sistemas heredados con un nuevo diseño.
+* **Patrón Proxy de Registro:**  proporciona una capa de abstracción entre una aplicación y un servicio de registro. Permite interceptar y registrar llamadas a métodos del servicio de registro sin modificar el código de la aplicación. El patrón Proxy de Registro es útil para la depuración, el registro de auditoría y la medición del rendimiento.
+* **Patrón Decorator:** El patrón Decorator agrega funcionalidad a un objeto existente de forma dinámica sin modificar su clase. Envuelve el objeto original en un nuevo objeto que delega la mayoría de las llamadas al objeto original y agrega nuevas funciones o modifica su comportamiento. El patrón Decorator es útil para extender la funcionalidad de clases existentes sin violar los principios de SOLID.
+
+<a name="Singleton"> </a>
+##  Aplicar el patrón Singular a la aplicación de la calculadora:
+
+La implementación del patrón Singular o  Singleton implica crear una clase con un constructor privado y un método estático para obtener la instancia única. El método estático verifica si la instancia ya existe; si no, la crea y la devuelve. Luego, devuelve la instancia existente en llamadas posteriores.
+
+En una calculadora, el patrón Singleton se puede usar para implementar una clase que almacena y administra la configuración de la calculadora, como las unidades de medida, el número de decimales y el formato de los números. De esta manera, la configuración se puede acceder y modificar desde cualquier parte de la aplicación sin tener que crear múltiples instancias de la clase de configuración.
+
+<p align="center">
+  <img src="https://github.com/Diegodepab/isa2024-healthcalc/blob/practica4/Images/Pantalla_para_Ideal_Weightpng.png" width="400" title="Singleton">
+</p>
+
 <a name="otros"> </a>
 # Otros:
 

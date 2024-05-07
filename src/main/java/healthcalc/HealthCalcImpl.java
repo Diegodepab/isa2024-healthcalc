@@ -8,6 +8,22 @@ package healthcalc;
  *
  */
 public class HealthCalcImpl implements HealthCalc {
+	
+	// Patron Singular
+	private static HealthCalcImpl instance;
+
+	private HealthCalcImpl() {
+		//inicializa la calculadora 
+	}
+
+	public static HealthCalcImpl getInstance() {
+		if (instance == null) {
+			instance = new HealthCalcImpl();
+			//Lazy initialization (inicialización perezosa)
+	    }
+	        return instance;
+	 }
+	
     @Override
     public float idealWeight(int height, char gender) throws Exception {
         Character sexo = Character.toUpperCase(gender);
