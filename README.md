@@ -29,6 +29,12 @@ Se desea desarrollar una calculadora que permita estimar varios parámetros de s
       <ol> <li><a href="#intro5">Introducción practica5</a>
         <li><a href="#CalcD"> Calculadora D:</a></li>
         <li><a href="#CalcE"> Calculadora E:</a></li></ol> </li>
+    <li><a href="#practica6">Practica6</a></li>
+      <ol> <li><a href="#intro6">Introducción practica6</a>
+        <li><a href="#singleton"> Patrón Singular:</a></li>
+        <li><a href="#adapter"> Patrón Adaptador:</a></li>
+        <li><a href="#proxy"> Patrón Proxy de Registro:</a>
+        <li><a href="#decorator"> Patrón Decorador:</a></li></li></ol> </li>
     <li><a href="#otros">Autor, Profesor y otros detalles</a></a>
     </ol>
 </details>
@@ -358,7 +364,7 @@ La segunda aplicación a juzgar es la calculadora E, correspondiente a la siguie
 
 <a name="intro6"></a>
 # Introducción: 
-**Los patrones de diseño de software** son soluciones reutilizables a problemas comunes de diseño que se presentan durante el desarrollo de software. Proporcionan un vocabulario común para que los desarrolladores comuniquen ideas de diseño y promueven la reutilización de código probado.
+**Los [patrones de diseño](https://refactoring.guru/) de software** son soluciones reutilizables a problemas comunes de diseño que se presentan durante el desarrollo de software. Proporcionan un vocabulario común para que los desarrolladores comuniquen ideas de diseño y promueven la reutilización de código probado.
 
 Existen una gran cantidad de patrones de diseños de diversas indoles y categorías, dando solución a muchos de los problemas que un ingeniero de software se puede enfrentar en su día a día, algunos podrían ser:
 * **Patrón singleton:**  restringe la creación de una clase a una sola instancia. Esto significa que solo existe una instancia de la clase en todo el programa. El patrón Singleton es útil cuando se necesita un acceso global a un recurso compartido, como una configuración de aplicación o un objeto de base de datos. 
@@ -376,6 +382,15 @@ En una calculadora, el patrón Singleton se puede usar para implementar una clas
 <p align="center">
   <img src="https://github.com/Diegodepab/isa2024-healthcalc/blob/practica4/Images/Pantalla_para_Ideal_Weightpng.png" width="400" title="Singleton">
 </p>
+
+<a name="adapter"> </a>
+##  Aplicar el patrón Singular a la aplicación de la calculadora:
+
+<a name="proxy"> </a>
+##  Aplicar el patrón Singular a la aplicación de la calculadora:
+
+<a name="decorator"> </a>
+##  Aplicar el patrón Singular a la aplicación de la calculadora:
 
 <a name="otros"> </a>
 # Otros:
