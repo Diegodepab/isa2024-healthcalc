@@ -1,7 +1,7 @@
 package healthcalc;
 
 public class Adapter_HealthCalc implements HealthHospital{
-	private HealthCalc calcu;
+	private HealthCalcImpl calcu;
 
     public Adapter_HealthCalc() {
     	calcu = HealthCalcImpl.getInstance();
