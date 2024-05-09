@@ -352,9 +352,6 @@ La segunda aplicación a juzgar es la calculadora E, correspondiente a la siguie
   <img src="https://github.com/Diegodepab/isa2024-healthcalc/blob/practica5/Images/practica5/Calculadora_E_.png" width="400" title="implemen_basal">
 </p>
 
-
-#---------------------------------------------------------------------
-
 <a name="practica6"></a>
 # Práctica 6
 
@@ -375,13 +372,13 @@ Existen una gran cantidad de patrones de diseños de diversas indoles y categor�
 <a name="Singleton"> </a>
 ##  Aplicar el patrón **Singular** a la aplicación de la calculadora:
 
-La implementación del patrón Singular o  Singleton implica crear una clase con un constructor privado y un método estático para obtener la instancia única. El método estático verifica si la instancia ya existe; si no, la crea y la devuelve. Luego, devuelve la instancia existente en llamadas posteriores.
+La implementación del patrón Singular o  Singleton implica crear una clase con un constructor privado y un método estático para obtener la instancia única. El método estático verifica si la instancia ya existe; si no, la crea y la devuelve. Luego, devuelve la instancia existente en llamadas posteriores. Los problemas que busca solucionar el patrón son: asegura que una clase tiene solo una instancia y proporciona un punto de acceso global a la instancia
 
 En una calculadora, el patrón Singleton se puede usar para implementar una clase que almacena y administra la configuración de la calculadora, como las unidades de medida, el número de decimales y el formato de los números. De esta manera, la configuración se puede acceder y modificar desde cualquier parte de la aplicación sin tener que crear múltiples instancias de la clase de configuración.
 
 ### Diagrama despúes de la aplicación del patrón **singular**:
 <p align="center">
-  <img src="https://github.com/Diegodepab/isa2024-healthcalc/blob/practica6/design_patterns/Imagen_Singleton.png" width="600" title="Singleton">
+  <img src="https://github.com/Diegodepab/isa2024-healthcalc/blob/practica6/design_patterns/Singleton_Imagen.png" width="600" title="Singleton">
 </p>
 
 <a name="adapter"> </a>
@@ -392,11 +389,23 @@ En el caso del Hospital Costa del Sol, podemos crear un adaptador que traduzca l
 
 ### Diagrama despúes de la aplicación del patrón **adapter**:
 <p align="center">
-  <img src="https://github.com/Diegodepab/isa2024-healthcalc/blob/practica6/design_patterns/Imagen_Singleton.png" width="600" title="Adapter">
+  <img src="https://github.com/Diegodepab/isa2024-healthcalc/blob/practica6/design_patterns/Adapter_Imagen.png" width="600" title="Adapter">
 </p>
 
 <a name="proxy"> </a>
 ##  Aplicar el patrón **proxy de registro** a la aplicación de la calculadora:
+El patrón Proxy de Registro proporciona una capa de abstracción entre una aplicación y un servicio de registro. Permite interceptar y registrar llamadas a métodos del servicio de registro sin modificar el código de la aplicación. El patrón Proxy de Registro es útil para la depuración, el registro de auditoría y la medición del rendimiento. La estructura básica del patrón Proxy de Registro consiste en tres clases principales:
+
+- _Proxy:_ Implementa la misma interfaz que el objeto al que se está delegando y contiene una referencia al objeto real.
+- _Objeto real:_ Implementa la funcionalidad real que se quiere registrar.
+- _Registrador:_ Define la interfaz para registrar eventos.
+
+En este caso se necesita registrar el uso de la calculadora sin modificar su código existente. Además, se requiere almacenar los datos de los pacientes de forma anónima y obtener métricas de uso, como la media de los valores introducidos y calculados. Para esto se puede implementar un Proxy de Registro que intercepte las llamadas a la calculadora y registre la información relevante, como el paciente, los valores introducidos y los resultados calculados. El proxy puede utilizar un registrador para almacenar los datos de forma anónima y proporcionar métodos para obtener métricas de uso.
+
+### Diagrama despúes de la aplicación del patrón **proxy**:
+<p align="center">
+  <img src="https://github.com/Diegodepab/isa2024-healthcalc/blob/practica6/design_patterns/Adapteren.png" width="600" title="proxy">
+</p>
 
 <a name="decorator"> </a>
 ##  Aplicar el patrón **decorador** a la aplicación de la calculadora:

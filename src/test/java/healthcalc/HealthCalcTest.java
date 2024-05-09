@@ -109,6 +109,18 @@ public class HealthCalcTest {
 	public void testMujerEspecificaIW() throws Exception{
 		assertEquals(61, (Math.round(calcu.idealWeight(168, 'w'))));
 	}
+	
+	private final Adapter_HealthCalc adapterCalcu = new Adapter_HealthCalc();
+
+	@Test // 12
+	@DisplayName("Comprobación de que adapter funciona correctamente")
+	public void testAdapterIW() throws Exception {
+		float IW = 110 - 100 - (110 - 150) / 4f;
+		assertEquals(IW, adapterCalcu.pesoIdeal('m', 1.1f));
+		
+		IW = 160 - 100 - (160 - 150) / 2.5f;
+		assertEquals(IW, adapterCalcu.pesoIdeal('w', 1.6f));
+	}
 	///////////////////////////////////////////////////////////////////////////
 	//////////////basalMetabolicRate() test ///////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
@@ -190,5 +202,15 @@ public class HealthCalcTest {
 	@DisplayName("Test hombre Externo BMR")
 	public void testMenExternoBMR() throws Exception{
 		assertEquals(1556.25, (calcu.basalMetabolicRate(60, 169, 'M', 21)));
+	}
+	
+	@Test // 12
+	@DisplayName("Comprobación de que adapter funciona correctamente")
+	public void testAdapterBMR() throws Exception {
+		float BMR = (float) (10 * 21 + 6.25 * 150 - 5 * 13 - 161);
+		assertEquals(BMR, adapterCalcu.bmr('w', 13, 1.5f, 21000));
+		
+		BMR = (float) (10 * 80 + 6.25 * 170 - 5 * 55 + 5);
+		assertEquals(BMR, adapterCalcu.bmr('m', 55, 1.7f, 80000));
 	}
 }
