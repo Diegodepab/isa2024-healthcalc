@@ -121,6 +121,17 @@ public class HealthCalcTest {
 		IW = 160 - 100 - (160 - 150) / 2.5f;
 		assertEquals(IW, adapterCalcu.pesoIdeal('w', 1.6f));
 	}
+	
+	Proxy_Registro_HealthCalc statsCalcu = new Proxy_Registro_HealthCalc(adapterCalcu);
+	@Test // 13
+	@DisplayName("Comprobación de que proxy funciona correctamente")
+	public void testProxyIW() throws Exception {
+		float IW = statsCalcu.pesoIdeal('m', 1.7f);
+		assertEquals(statsCalcu.alturaMedia(), 1.7f);
+		IW = statsCalcu.pesoIdeal('m', 1.3f);
+		assertEquals(statsCalcu.alturaMedia(), 1.5f);
+		assertEquals(statsCalcu.numSexoH(), 2);
+	}
 	///////////////////////////////////////////////////////////////////////////
 	//////////////basalMetabolicRate() test ///////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
@@ -205,12 +216,22 @@ public class HealthCalcTest {
 	}
 	
 	@Test // 12
-	@DisplayName("Comprobación de que adapter funciona correctamente")
+	@DisplayName("Comprobación de que adapter funciona correctamente BMR")
 	public void testAdapterBMR() throws Exception {
 		float BMR = (float) (10 * 21 + 6.25 * 150 - 5 * 13 - 161);
 		assertEquals(BMR, adapterCalcu.bmr('w', 13, 1.5f, 21000));
 		
 		BMR = (float) (10 * 80 + 6.25 * 170 - 5 * 55 + 5);
 		assertEquals(BMR, adapterCalcu.bmr('m', 55, 1.7f, 80000));
+	}
+	
+	@Test // 13
+	@DisplayName("Comprobación de que proxy funciona correctamente BMR")
+	public void testProxyBMR() throws Exception {
+		double BMR = statsCalcu.bmr('m', 13, 1.5f, 21000);
+		assertEquals(statsCalcu.edadMedia(), 13);	
+		BMR = statsCalcu.bmr('m', 17, 1.5f, 21000);
+		assertEquals(statsCalcu.edadMedia(), 15);
+		assertEquals(statsCalcu.numSexoH(), 2);
 	}
 }
