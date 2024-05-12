@@ -404,11 +404,25 @@ En este caso se necesita registrar el uso de la calculadora sin modificar su có
 
 ### Diagrama despúes de la aplicación del patrón **proxy**:
 <p align="center">
-  <img src="https://github.com/Diegodepab/isa2024-healthcalc/blob/practica6/design_patterns/Adapteren.png" width="600" title="proxy">
+  <img src="https://github.com/Diegodepab/isa2024-healthcalc/blob/practica6/design_patterns/Proxy_Imagen.png" width="600" title="proxy">
 </p>
 
 <a name="decorator"> </a>
 ##  Aplicar el patrón **decorador** a la aplicación de la calculadora:
+
+El patrón Decorator agrega funcionalidad a un objeto existente de forma dinámica sin modificar su clase. Envuelve el objeto original en un nuevo objeto que delega la mayoría de las llamadas al objeto original y agrega nuevas funciones o modifica su comportamiento. El patrón Decorator es útil para extender la funcionalidad de clases existentes sin violar los principios de SOLID.
+
+La estructura básica del patrón Decorator consiste en dos clases principales:
+
+-  _Componente:_ Define la interfaz del objeto que se decora y puede implementar una funcionalidad básica.
+-  _Decorador:_ Implementa la misma interfaz que el componente y contiene una referencia al componente original. Los decoradores pueden agregar nuevas funciones o modificar el comportamiento del componente original.
+
+En el caso de la calculadora de salud, se necesitan dos versiones de la calculadora: una europea y una americana. Además, se debe mostrar un mensaje con la información de la operación "BMR" en ambos idiomas. Se pueden crear dos clases decoradoras, una para convertir las unidades de medida a formato europeo y otra para convertirlas a formato americano. Además, se puede crear una clase decoradora para mostrar el mensaje "BMR" en ambos idiomas. Estas clases decoradoras se pueden envolver una a una alrededor de la instancia original de la calculadora para agregar la funcionalidad deseada.
+
+### Diagrama despúes de la aplicación del patrón **Decorador**:
+<p align="center">
+  <img src="https://github.com/Diegodepab/isa2024-healthcalc/blob/practica6/design_patterns/Decorador_Imagen.png" width="600" title="decorador">
+</p>
 
 <a name="otros"> </a>
 # Otros:
