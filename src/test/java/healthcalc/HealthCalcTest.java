@@ -243,6 +243,7 @@ public class HealthCalcTest {
 	@Test // 14
 	@DisplayName("Comprobación de que decorador funciona correctamente")
 	public void testDecoradorBMR() throws Exception {
+		System.out.println("Mensaje en Español:");
 		double BMR = calcu_americana.bmr('m', 20,  6.57f, 222);
 		BMR = calcu_Europa.bmr('m', 22,  1.68f, 65000);
 		System.out.println(" ");
@@ -253,7 +254,7 @@ public class HealthCalcTest {
     America_Version_HealthCalc calcu_americana2= new America_Version_HealthCalc(message);
     Europa_Version_HealthCalc calcu_Europa2= new Europa_Version_HealthCalc(message);
 	@Test // 15
-	@DisplayName("Comprobación de que decorador funciona correctamente")
+	@DisplayName("Comprobación de que el mensaje en inglés funciona correctamente")
 	public void testDecoradorBMR_INGLES() throws Exception {
 		System.out.println("Mensaje en Inglés:");
 		System.out.print("Versión americana:");

@@ -5,7 +5,7 @@ package healthcalc;
  * Se refiere a unidades inglesas (anglosajonas).
  * 1 kg = 2,20462 libras y según Google, 1 pie es 0.3048 metros.
  */
-public class America_Version_HealthCalc extends decorator_HealthCalc {
+public class America_Version_HealthCalc extends Decorator_HealthCalc {
 
     public America_Version_HealthCalc(HealthHospital calcu) {
         super(calcu);

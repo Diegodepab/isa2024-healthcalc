@@ -2,13 +2,15 @@ package healthcalc;
 
 public abstract class Mensaje_Decorador implements HealthHospital {
 	protected HealthHospital calcu;
-	protected abstract void mostrar(float altura, int peso, double indice_metabolico);
+	
 	
 	public Mensaje_Decorador(HealthHospital calcu) {
 		super();
 		this.calcu = calcu;
 	}
-
+	
+	protected abstract void mostrar(float altura, int peso, double indice_metabolico);
+	
 	@Override
 	public int pesoIdeal(char genero, float altura) {
 		// TODO Auto-generated method stub

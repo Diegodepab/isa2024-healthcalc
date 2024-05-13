@@ -421,7 +421,14 @@ En el caso de la calculadora de salud, se necesitan dos versiones de la calculad
 
 ### Diagrama despúes de la aplicación del patrón **Decorador**:
 <p align="center">
-  <img src="https://github.com/Diegodepab/isa2024-healthcalc/blob/practica6/design_patterns/Decorador_Imagen.png" width="600" title="decorador">
+  <img src="https://github.com/Diegodepab/isa2024-healthcalc/blob/practica6/design_patterns/Decorador_Imagen.png" width="1000" title="decorador">
+</p>
+
+## Ejemplo de mensaje de la calculadora:
+"Por otra parte, la calculadora debe mostrar por pantalla un mensaje preciso con la información de la operación"
+A continuación un pequeño ejemplo de las salidas que puede dar la calculadora una vez implementado los patrones (si desea obtener más información puede acercarse a la carpeta images que contiene capturas y salidas de ejemplo:
+<p align="center">
+  <img src="https://github.com/Diegodepab/isa2024-healthcalc/blob/practica6/Images/Mensajes.png" width="600" title="mensaje">
 </p>
 
 <a name="otros"> </a>

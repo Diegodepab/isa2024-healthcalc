@@ -1,9 +1,9 @@
 package healthcalc;
 
-public class decorator_HealthCalc implements HealthHospital{
+public class Decorator_HealthCalc implements HealthHospital{
 	protected HealthHospital calcu;
 
-	public decorator_HealthCalc(HealthHospital calcu) {
+	public Decorator_HealthCalc(HealthHospital calcu) {
 		super();
 		this.calcu = calcu;
 	}
