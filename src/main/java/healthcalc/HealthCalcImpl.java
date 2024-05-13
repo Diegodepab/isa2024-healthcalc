@@ -4,7 +4,7 @@
 package healthcalc;
 
 /**
- * @author DiegoDePablo
+ * @author DiegoDePab
  *
  */
 public class HealthCalcImpl implements HealthCalc {

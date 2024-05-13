@@ -1,5 +1,9 @@
 package healthcalc;
 
+/**
+ * @author DiegoDePab
+ *
+ */
 public class Adapter_HealthCalc implements HealthHospital{
 	private HealthCalcImpl calcu;
 

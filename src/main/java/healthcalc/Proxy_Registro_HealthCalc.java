@@ -13,8 +13,7 @@ public class Proxy_Registro_HealthCalc implements HealthHospital, HealthStats{
     private int numSexoH;
     private int numSexoM;
     // private int numPac; no hace falta al tener todas las alturas
-  
-
+    
     public Proxy_Registro_HealthCalc(HealthHospital calcu) {
         this.calcu = calcu;
         this.lista_altura = new ArrayList<>();
@@ -24,7 +23,7 @@ public class Proxy_Registro_HealthCalc implements HealthHospital, HealthStats{
         this.numSexoH = 0;
         this.numSexoM = 0;
     }
-    
+    //El problema de esta calculadora es que no maneja el control de memoria, así que se acumulará mucha memoria
     private float calcularMedia(List<? extends Number> lista) {
         float suma = 0;
         for (Number valor : lista) {

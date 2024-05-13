@@ -234,4 +234,31 @@ public class HealthCalcTest {
 		assertEquals(statsCalcu.edadMedia(), 15);
 		assertEquals(statsCalcu.numSexoH(), 2);
 	}
+	
+
+    Castellano_Mensaje mensaje= new Castellano_Mensaje(statsCalcu);
+
+    America_Version_HealthCalc calcu_americana= new America_Version_HealthCalc(mensaje);
+    Europa_Version_HealthCalc calcu_Europa= new Europa_Version_HealthCalc(mensaje);
+	@Test // 14
+	@DisplayName("Comprobación de que decorador funciona correctamente")
+	public void testDecoradorBMR() throws Exception {
+		double BMR = calcu_americana.bmr('m', 20,  6.57f, 222);
+		BMR = calcu_Europa.bmr('m', 22,  1.68f, 65000);
+		System.out.println(" ");
+	}
+	
+    Ingles_Mensaje message= new Ingles_Mensaje(statsCalcu);
+
+    America_Version_HealthCalc calcu_americana2= new America_Version_HealthCalc(message);
+    Europa_Version_HealthCalc calcu_Europa2= new Europa_Version_HealthCalc(message);
+	@Test // 15
+	@DisplayName("Comprobación de que decorador funciona correctamente")
+	public void testDecoradorBMR_INGLES() throws Exception {
+		System.out.println("Mensaje en Inglés:");
+		System.out.print("Versión americana:");
+		double BMR = calcu_americana2.bmr('m', 20,  6.57f, 222);
+		System.out.print("Versión Europa:");
+		BMR = calcu_Europa2.bmr('m', 22,  1.68f, 65000);
+	}
 }

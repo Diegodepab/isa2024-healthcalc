@@ -33,7 +33,7 @@ public class America_Version_HealthCalc extends decorator_HealthCalc {
     }
 
     private int convertirLibrasAGramos(int peso) {
-        return (int) (peso * 2.20462);
+        return (int) (peso * 453.592);
     }
 
     private int convertirKGALibras(int pesoKG) {
