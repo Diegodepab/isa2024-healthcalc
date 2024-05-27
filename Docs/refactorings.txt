@@ -27,10 +27,16 @@ REFACTORING 1:
   - **Descripción:** En esta ocasión se creo un objeto Person (y a su vez una implementación del mismo persona_pac) en el cúal tendrá todos los datos necesarios para ejecutar la calculadora, evitando tener que movilizar los 4 datos entre las distintas clases. 
   - **Número de cambios:** En esta ocasión el refactoring no automatizo tantos cambios como en el apartado anterior, aproximadamente más de 100 lineas de código habrán sido modificadas entre la creación de persona, adaptar los cambios y modificar los test.
 
-REFACTORING 3: NECESITO TERMINAR GENDER Y PERSON ANTES DE LLEGAR AQUÍ
-## refactoring3 CardiovascularMetrics 
-  - **Bad smells:** Large class
+## Refactoring3 << interface >> CardiovascularMetrics 
+  - **Bad smells:** Clase larga/ clase Dios
   - **El refactorings aplicados para resolverlo:** Segregación de interfaz (segregation Interface)
   - **tipo o categoría de refactorización:** Refactorización de clases (Class Refactoring)
-  - **Descripción:**
-  - **Número de cambios:** 
+  - **Descripción:** Se creo la interfaz CardiovascularMetrics para separar las funcionalidades relacionadas con el cálculo de la tasa metabólica basal.
+  - **Número de cambios:** Aproximadamente 10 a 15 lineas manuales, esta fue relativamente más fácil de refactorizar que la interfaz persona. 
+ 
+## Refactoring4 << interface >> MetabolicMetrics 
+  - **Bad smells:**  Clase Larga/ Clase Dios
+  - **El refactorings aplicados para resolverlo:** Segregación de interfaz (segregation Interface)
+  - **tipo o categoría de refactorización:** Refactorización de clases (Class Refactoring)
+  - **Descripción:** Al igual que el apartado anterior se creo la interfaz MetabolicMetrics para separar las funcionalidades relacionadas con el peso ideal. 
+  - **Número de cambios:** Muy similar al anterior, se podría haber agrupado en 1 refactoring donde una clase que hace muchas 2 tareas diferentes se implementa un refactoring para que cada actividad se haga por separado, también fue de 10 a 15 lineas manuales, donde mayor intervención manual fue en el test.
