@@ -5,6 +5,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JTextField;
+
+import healthcalc.Gender;
+
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JRadioButton;
@@ -240,11 +243,11 @@ public class calculadora_vista {
         }
     }
 
-    public char getGenero() {
+    public Gender getGenero() {
         if (mujerRadioButton.isSelected()) {
-            return 'w';
+            return Gender.FEMALE;
         } else {
-            return 'm';
+            return Gender.MALE;
         }
     }
 

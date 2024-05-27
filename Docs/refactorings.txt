@@ -1,0 +1,29 @@
+Enunciado:
+Aplicar los refactorings correspondientes para adaptar la implementación actual de la calculadora al
+siguiente esquema. Para cada una de las modificaciones que deba hacer, indique en un documento de
+texto (.txt) aparte la siguiente información:
+(1) el nombre (en inglés o español) del “bad smell” o el problema que resuelve el refactoring aplicado
+(ejemplo: duplicación de código, clase Dios, método con muchos parámetros,…),
+(2) el/los refactorings aplicados para resolverlo (extracción de método, encapsulación de campo,…)
+(3) el tipo/categoría del refactoring (class refactoring, method refactoring, attribute refactoring),
+(4) una breve descripción del cambio que ha realizado en su proyecto (un pequeño párrafo de 2 o 3
+líneas como máximo).
+(5) número de cambios manuales que has tenido que hacer para aplicar el refactoring. Por ejemplo: 2
+líneas de código, 3 clases,… (Contar solo los cambios manuales, no los que haga la herramienta
+automáticamente).
+
+REFACTORING 1:
+## refactoring1 <<enum>> Gender 
+  - **Bad smells:** obsesión primitiva (Primitive Obsession) https://refactoring.guru/smells/primitive-obsession
+  - **El refactorings aplicados para resolverlo:** Remplazar dato del tipo valor por un objeto (Replace Data Value with Object)
+  - **tipo o categoría de refactorización:** Refactorización de clases (Class Refactoring)
+  - **Descripción:** Se implemento el enumerado Gender, y se cambió en todo el programa la existencia de char genero por Gender género, lo cual resulto también un cambio en el llamado y funcionamiento de la calculadora, donde antes se llamaba con un 'h' ahora debe ser llamada con un Gender.MALE, así mismo se eliminó un if de la calculadora que comprobaba el valor char que era introducido (devolviera un mensaje si recibía una letra diferente a 'h' o 'm'), Además de que se eliminaron 2 test, ya no tiene sentido la posibilidad de tener un error al introducir un genero para la calculadora.   
+  - **Número de cambios:** Si consideramos cambios manuales como aquellos que tuve que realizar en Visual studio para cambiar todas las ocurrencias 'h' por Gender.MALE y lo mismo en caso de 'w', diría que aproximadamente unas 20 a 25 lineas, de las cuales la mitad serán eliminar ifs innecesarios y test que ya no son útiles.
+
+REFACTORING 3: NECESITO TERMINAR GENDER Y PERSON ANTES DE LLEGAR AQUÍ
+## refactoring3 CardiovascularMetrics 
+  - **Bad smells:** Large class
+  - **El refactorings aplicados para resolverlo:** Segregación de interfaz (segregation Interface)
+  - **tipo o categoría de refactorización:** Refactorización de clases (Class Refactoring)
+  - **Descripción:**
+  - **Número de cambios:** 

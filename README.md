@@ -35,6 +35,12 @@ Se desea desarrollar una calculadora que permita estimar varios parámetros de s
         <li><a href="#adapter"> Patrón Adaptador:</a></li>
         <li><a href="#proxy"> Patrón Proxy de Registro:</a>
         <li><a href="#decorator"> Patrón Decorador:</a></li></li></ol> </li>
+    <li><a href="#practica7">Practica7</a></li>
+      <ol> <li><a href="#intro7">Introducción practica7</a>
+        <li><a href="#refactoring1"> refactoring1:</a></li>
+        <li><a href="#refactoring2"> refactoring2:</a></li>
+        <li><a href="#refactoring3"> refactoring3:</a>
+        <li><a href="#refactoring4"> refactoring4:</a></li></li></ol> </li>
     <li><a href="#otros">Autor, Profesor y otros detalles</a></a>
     </ol>
 </details>
@@ -430,6 +436,73 @@ A continuación un pequeño ejemplo de las salidas que puede dar la calculadora 
 <p align="center">
   <img src="https://github.com/Diegodepab/isa2024-healthcalc/blob/practica6/Images/Mensajes.png" width="600" title="mensaje">
 </p>
+
+<a name="practica7"> </a>
+# Práctica 7: Refactorings
+
+<a name="intro7"> </a>
+## introducción
+
+**El refactoring o refactorización** es un proceso que se utiliza en programación para mejorar la calidad y mantenibilidad del código existente sin cambiar su comportamiento externo.
+
+Los **“bad smells”**  son características del código que pueden indicar la presencia de defectos, malas prácticas de programación o estructuras del código que podrían ser problemáticas. Algunos ejemplos de “bad smells” son:
+
+  - _Código duplicado:_ Esto ocurre cuando el mismo código aparece en varios lugares del sistema.
+  - _Métodos largos:_ Esto ocurre cuando un método es demasiado largo y complejo, lo que dificulta su comprensión y mantenimiento.
+  - _God Class (Clase Dios):_ Esto ocurre cuando una clase tiene demasiada responsabilidad.
+  - _Larga lista de parámetros de entrada:_ Esto ocurre cuando un método tiene muchos parámetros de entrada, que muchas veces, son opcionales o innecesarios.
+
+
+Para resolver estos “bad smells”, se aplican diferentes **técnicas de refactorización**. Algunas de las técnicas de refactorización más comunes incluyen:
+  - _Extracción de método:_ Esta técnica se utiliza cuando un método es demasiado largo o complejo. Consiste en extraer una parte del método y convertirla en un nuevo método.
+  - _Encapsulación de campo:_ Esta técnica se utiliza para limitar el acceso directo a los campos de una clase. En lugar de acceder directamente a los campos, se utilizan métodos getter y setter.
+  
+En cuanto al **tipo o categoría de refactorización**, se puede clasificar en función de la parte del código que se está refactorizando. Algunos ejemplos son:
+  - _Refactorización de clases (Class Refactoring):_ Este tipo de refactorización se centra en mejorar la estructura y el diseño de las clases.
+  - _Refactorización de métodos (Method Refactoring):_ Este tipo de refactorización se centra en mejorar la estructura y el diseño de los métodos.
+  - _Refactorización de atributos (Attribute Refactoring):_ Este tipo de refactorización se centra en mejorar la estructura y el diseño de los atributos de una clase.
+
+En esta práctica toca aplicar los refactorings correspondientes para adaptar la implementación actual de la calculadora al siguiente esquema.
+
+<p align="center">
+  <img src="https://github.com/Diegodepab/isa2024-healthcalc/blob/practica6/design_patterns/Esquema_pracitca7.png" width="1000" title="decorador">
+</p>
+
+NOTA: tanto CardiovascularMetrics, como MetabolicMetrics, son interfaces
+
+<a name="refactoring1"> </a>
+## refactoring1 <<enum>> Gender 
+  - **Bad smells:**  [obsesión primitiva (Primitive Obsession)](https://refactoring.guru/smells/primitive-obsession))
+  - **El refactorings aplicados para resolverlo:** Remplazar dato del tipo valor por un objeto (Replace Data Value with Object)
+  - **tipo o categoría de refactorización:** Refactorización de clases (Class Refactoring)
+  - **Descripción:** Se implemento el enumerado Gender, y se cambió en todo el programa la existencia de char genero por Gender género, lo cual resulto también un cambio en el llamado y funcionamiento de la calculadora, donde antes se llamaba con un 'h' ahora debe ser llamada con un Gender.MALE, así mismo se eliminó un if de la calculadora que comprobaba el valor char que era introducido (devolviera un mensaje si recibía una letra diferente a 'h' o 'm'), Además de que se eliminaron 2 test, ya no tiene sentido la posibilidad de tener un error al introducir un genero para la calculadora.   
+  - **Número de cambios:** Si consideramos cambios manuales como aquellos que tuve que realizar en Visual studio para cambiar todas las ocurrencias 'h' por Gender.MALE y lo mismo en caso de 'w', diría que aproximadamente unas 20 a 25 lineas, de las cuales la mitad serán eliminar ifs innecesarios y test que ya no son útiles.
+  
+<a name="refactoring2"> </a>
+## refactoring2 <<interface>> Person
+  - **Bad smells:** 
+  - **El refactorings aplicados para resolverlo:**
+  - **tipo o categoría de refactorización:**
+  - **Descripción:**
+  - **Número de cambios:**
+
+<a name="refactoring3"> </a>
+## refactoring3 <<interface>> CardiovascularMetrics 
+  - **Bad smells:** Large class
+  - **El refactorings aplicados para resolverlo:** Segregación de interfaz (segregation Interface)
+  - **tipo o categoría de refactorización:** Refactorización de clases (Class Refactoring)
+  - **Descripción:**
+  - **Número de cambios:** 
+ 
+  
+<a name="refactoring4"> </a>
+## refactoring4 <<interface>> MetabolicMetrics 
+  - **Bad smells:** 
+  - **El refactorings aplicados para resolverlo:**
+  - **tipo o categoría de refactorización:**
+  - **Descripción:**
+  - **Número de cambios:**
+
 
 <a name="otros"> </a>
 # Otros:

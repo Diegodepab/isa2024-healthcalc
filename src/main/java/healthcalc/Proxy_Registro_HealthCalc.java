@@ -70,8 +70,8 @@ public class Proxy_Registro_HealthCalc implements HealthHospital, HealthStats{
 	}
 
 	@Override
-	public double bmr(char genero, int edad, float altura, int peso) {
-		if (genero == 'm') {
+	public double bmr(Gender genero, int edad, float altura, int peso) {
+		if (genero == Gender.MALE) {
         	//M de men, no confundir con mujer
         	numSexoH=1+numSexoH;
         } else {
@@ -86,8 +86,8 @@ public class Proxy_Registro_HealthCalc implements HealthHospital, HealthStats{
 	}
 
 	@Override
-	public int pesoIdeal(char genero, float altura) {
-		if (genero == 'm') {
+	public int pesoIdeal(Gender genero, float altura) {
+		if (genero == Gender.MALE) {
         	//M de men, no confundir con mujer
         	numSexoH=1+numSexoH;
         } else {

@@ -16,14 +16,14 @@ public class America_Version_HealthCalc extends Decorator_HealthCalc {
      * y devuelve el bmr como siempre y el peso ideal en libras
      */    
     @Override
-    public double bmr(char genero, int edad, float altura, int peso) {
+    public double bmr(Gender genero, int edad, float altura, int peso) {
         int alturaMetros = convertirPiesAMetros(altura);
         int pesoGramos = convertirLibrasAGramos(peso);
         return calcu.bmr(genero, edad, alturaMetros, pesoGramos);
     }
 
     @Override
-    public int pesoIdeal(char genero, float altura) {
+    public int pesoIdeal(Gender genero, float altura) {
         int alturaMetros = convertirPiesAMetros(altura);
         return convertirKGALibras(calcu.pesoIdeal(genero, alturaMetros));
     }
