@@ -26,7 +26,7 @@ public class calculadora_controlador implements ActionListener {
             int altura = vista.getAltura();
             Gender genero = vista.getGenero();
             try {
-                float resultado = modelo.idealWeight(new persona_pac(altura, genero));
+                double resultado = modelo.getIdealBodyWeight(new persona_pac(altura, genero));
                 vista.setResultText(resultado);
             } catch (Exception error) {
                 String msg = comando + ": " + error.getMessage();
@@ -39,7 +39,7 @@ public class calculadora_controlador implements ActionListener {
             int edad = vista.getEdad();
             float peso = vista.getPeso();
             try {
-                float resultado = modelo.basalMetabolicRate(new persona_pac(peso, altura, edad, genero));
+                double resultado = modelo.basalMetabolicRate(new persona_pac(peso, altura, edad, genero)); 
                 vista.setResultText(resultado);
             } catch (Exception error) {
                 String msg = comando + ": " + error.getMessage();

@@ -7,7 +7,7 @@ package healthcalc;
  * @author DiegoDePab
  *
  */
-public class HealthCalcImpl implements HealthCalc {
+public class HealthCalcImpl implements CardiovascularMetrics, MetabolicMetrics {
 	
 	// Patron Singular
 	private static HealthCalcImpl instance;
@@ -26,7 +26,7 @@ public class HealthCalcImpl implements HealthCalc {
 	 }
 	
     @Override
-    public float idealWeight(Person person) throws Exception {
+    public double getIdealBodyWeight(Person person) {
     	float height = person.height();
     	Gender genero = person.gender();
         if (height > 272) {
@@ -34,19 +34,19 @@ public class HealthCalcImpl implements HealthCalc {
         } else {
             if (genero == Gender.MALE) {
                 if (height >= 110) {
-                	return height - 100 - (height - 150) / 4f;
+                	return height - 100 - (height - 150) / 4d;
                     //variation return Math.round((height - 100 - (height - 150) / 4f )* 100) / 100;
                 } 
             } else {
                 if (height >= 100) {
-                	return height - 100 - (height - 150) / 2.5f;
+                	return height - 100 - (height - 150) / 2.5d;
                 } 
             }throw new IllegalArgumentException("La altura introducida es menor a la esperada, recuerda que es altura en cm");
         }
     }
 
 	@Override
-	public float basalMetabolicRate(Person person) throws Exception {
+	public double basalMetabolicRate(Person person) {
 		float height= person.height();
         Gender genero= person.gender();
         float weight= person.weight();
@@ -70,8 +70,4 @@ public class HealthCalcImpl implements HealthCalc {
         }
 	}
 
-	public float basalMetabolicRate(persona_pac persona_pac) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 }

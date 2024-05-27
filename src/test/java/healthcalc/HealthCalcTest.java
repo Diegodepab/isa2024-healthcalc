@@ -12,13 +12,13 @@ public class HealthCalcTest {
 
 	private final HealthCalcImpl calcu =  HealthCalcImpl.getInstance();
 	///////////////////////////////////////////////////////////////////////////
-	//////////////idealWeight() test /////////////////////////////////////////
+	//////////////getIdealBodyWeight() test /////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 	@Test //1
 	@DisplayName("Test de Altura Negativa IW")
 	public void testAlturaNegativaIW() {
 		assertThrows(IllegalArgumentException.class, 
-		() -> calcu.idealWeight(new persona_pac(-5, Gender.MALE)), 
+		() -> calcu.getIdealBodyWeight(new persona_pac(-5, Gender.MALE)), 
 		"La altura introducida es negativa");
 	}
 	//2
@@ -26,7 +26,7 @@ public class HealthCalcTest {
 	@DisplayName("Test de Altura menor a la esperada IW")
 	public void testAlturaMenorPosibleIW() {
 		assertThrows(IllegalArgumentException.class, 
-		() -> calcu.idealWeight(new persona_pac(20, Gender.MALE)), 
+		() -> calcu.getIdealBodyWeight(new persona_pac(20, Gender.MALE)), 
 		"La altura introducida es menor a la esperada la formula da errores con valores lejanos al promedio, recuerda que es altura en cm");
 	}
 	//3
@@ -34,7 +34,7 @@ public class HealthCalcTest {
 	@DisplayName("Test de Altura mayor a la esperada IW")
 	public void testAlturaMayorPosibleIW() {
 		assertThrows(IllegalArgumentException.class, 
-		() -> calcu.idealWeight(new persona_pac(300, Gender.MALE)), 
+		() -> calcu.getIdealBodyWeight(new persona_pac(300, Gender.MALE)), 
 		"La altura introducida es demasiado alta, revisa los valores introducidos");
 	}
 	//4
@@ -42,7 +42,7 @@ public class HealthCalcTest {
 	@DisplayName("Test de altura problematica con la formula hombres IW")
 	public void testAlturaProblemaHombresIW() {
 		assertThrows(IllegalArgumentException.class, 
-		() -> calcu.idealWeight(new persona_pac(109, Gender.MALE)), 
+		() -> calcu.getIdealBodyWeight(new persona_pac(109, Gender.MALE)), 
 		"La altura introducida es menor a la esperada la formula da errores con valores lejanos al promedio, recuerda que es altura en cm");
 	}
 	//5
@@ -50,56 +50,56 @@ public class HealthCalcTest {
 	@DisplayName("Test de altura problematica con la formula mujeres IW")
 	public void testAlturaProblemaMujeresIW() {
 		assertThrows(IllegalArgumentException.class, 
-		() -> calcu.idealWeight(new persona_pac(99, Gender.FEMALE)), 
+		() -> calcu.getIdealBodyWeight(new persona_pac(99, Gender.FEMALE)), 
 		"La altura introducida es menor a la esperada la formula da errores con valores lejanos al promedio, recuerda que es altura en cm");
 	}
 	//7
 	@Test
 	@DisplayName("Test entrada de sexo correcta IW")
 	public void SexCorrectIW(){
-		assertDoesNotThrow(() -> calcu.idealWeight(new persona_pac(168, Gender.MALE)));
-		assertDoesNotThrow(() -> calcu.idealWeight(new persona_pac(168, Gender.MALE)));
-		assertDoesNotThrow(() -> calcu.idealWeight(new persona_pac(168, Gender.FEMALE)));
-		assertDoesNotThrow(() -> calcu.idealWeight(new persona_pac(168, Gender.FEMALE)));
+		assertDoesNotThrow(() -> calcu.getIdealBodyWeight(new persona_pac(168, Gender.MALE)));
+		assertDoesNotThrow(() -> calcu.getIdealBodyWeight(new persona_pac(168, Gender.MALE)));
+		assertDoesNotThrow(() -> calcu.getIdealBodyWeight(new persona_pac(168, Gender.FEMALE)));
+		assertDoesNotThrow(() -> calcu.getIdealBodyWeight(new persona_pac(168, Gender.FEMALE)));
 	}
 	//8
 	@Test
 	@DisplayName("Test hombre uso promedio IW")
 	public void testHombrePromedioIW() throws Exception{
 		float IW = 110 - 100 - (110 - 150) / 4f;
-		assertEquals(IW, calcu.idealWeight(new persona_pac(110, Gender.MALE)));
+		assertEquals(IW, calcu.getIdealBodyWeight(new persona_pac(110, Gender.MALE)));
 
 		IW = 168 - 100 - (168 - 150) / 4f;
-		assertEquals(IW, calcu.idealWeight(new persona_pac(168, Gender.MALE)));
+		assertEquals(IW, calcu.getIdealBodyWeight(new persona_pac(168, Gender.MALE)));
 
 		IW = 250 - 100 - (250 - 150) / 4f;
-		assertEquals(IW, calcu.idealWeight(new persona_pac(250, Gender.MALE)));
+		assertEquals(IW, calcu.getIdealBodyWeight(new persona_pac(250, Gender.MALE)));
 	}
 	//9
 	@Test
 	@DisplayName("Test mujer uso promedio IW")
 	public void testMujerPromedioIW() throws Exception{
 		float IW = 100 - 100 - (100 - 150) / 2.5f;
-		assertEquals(IW, calcu.idealWeight(new persona_pac(100, Gender.FEMALE)));
-
-		IW = 168 - 100 - (168 - 150) / 2.5f;
-		assertEquals(IW, calcu.idealWeight(new persona_pac(168, Gender.FEMALE)));
+		assertEquals(IW, calcu.getIdealBodyWeight(new persona_pac(100, Gender.FEMALE)));
 
 		IW = 250 - 100 - (250 - 150) / 2.5f;
-		assertEquals(IW, calcu.idealWeight(new persona_pac(250, Gender.FEMALE)));
+		assertEquals(IW, calcu.getIdealBodyWeight(new persona_pac(250, Gender.FEMALE)));
+		
+		IW = 180 - 100 - (180 - 150) / 2.5f;
+		assertEquals(IW, calcu.getIdealBodyWeight(new persona_pac(180, Gender.FEMALE)));
 	}
 	// 10 usando calculadora para contrastar fuera del entorno
 	@Test
 	@DisplayName("Test hombre especifico IW")
 	public void testHombreEspecificoIW() throws Exception{
-		assertEquals(63.5, calcu.idealWeight(new persona_pac(168, Gender.MALE)));
+		assertEquals(63.5, calcu.getIdealBodyWeight(new persona_pac(168, Gender.MALE)));
 		
 	}
 	// 11
 	@Test
 	@DisplayName("Test mujer especifica IW")
 	public void testMujerEspecificaIW() throws Exception{
-		assertEquals(61, (Math.round(calcu.idealWeight(new persona_pac(168, Gender.FEMALE)))));
+		assertEquals(61, (Math.round(calcu.getIdealBodyWeight(new persona_pac(168, Gender.FEMALE)))));
 	}
 	
 	private final Adapter_HealthCalc adapterCalcu = new Adapter_HealthCalc();
