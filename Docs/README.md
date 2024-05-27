@@ -25,17 +25,16 @@ NOTA: tanto CardiovascularMetrics, como MetabolicMetrics, son interfaces
   
 <a name="refactoring3"> </a>
 ## Refactoring3 << interface >> CardiovascularMetrics 
-  - **Bad smells:** Large class
+  - **Bad smells:** Clase larga/ clase Dios
   - **El refactorings aplicados para resolverlo:** Segregación de interfaz (segregation Interface)
   - **tipo o categoría de refactorización:** Refactorización de clases (Class Refactoring)
-  - **Descripción:**
-  - **Número de cambios:** 
+  - **Descripción:** Se creo la interfaz CardiovascularMetrics para separar las funcionalidades relacionadas con el cálculo de la tasa metabólica basal.
+  - **Número de cambios:** Aproximadamente 10 a 15 lineas manuales, esta fue relativamente más fácil de refactorizar que la interfaz persona. 
  
-  
 <a name="refactoring4"> </a>
 ## Refactoring4 << interface >> MetabolicMetrics 
-  - **Bad smells:** 
-  - **El refactorings aplicados para resolverlo:**
-  - **tipo o categoría de refactorización:**
-  - **Descripción:**
-  - **Número de cambios:**
+  - **Bad smells:**  Clase Larga/ Clase Dios
+  - **El refactorings aplicados para resolverlo:** Segregación de interfaz (segregation Interface)
+  - **tipo o categoría de refactorización:** Refactorización de clases (Class Refactoring)
+  - **Descripción:** Al igual que el apartado anterior se creo la interfaz MetabolicMetrics para separar las funcionalidades relacionadas con el peso ideal. 
+  - **Número de cambios:** Muy similar al anterior, se podría haber agrupado en 1 refactoring donde una clase que hace muchas 2 tareas diferentes se implementa un refactoring para que cada actividad se haga por separado, también fue de 10 a 15 lineas manuales, donde mayor intervención manual fue en el test.
