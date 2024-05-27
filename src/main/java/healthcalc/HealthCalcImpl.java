@@ -14,6 +14,7 @@ public class HealthCalcImpl implements HealthCalc {
 
 	private HealthCalcImpl() {
 		//inicializa la calculadora 
+		super();
 	}
 
 	public static HealthCalcImpl getInstance() {
@@ -25,7 +26,9 @@ public class HealthCalcImpl implements HealthCalc {
 	 }
 	
     @Override
-    public float idealWeight(int height, Gender genero) throws Exception {
+    public float idealWeight(Person person) throws Exception {
+    	float height = person.height();
+    	Gender genero = person.gender();
         if (height > 272) {
             throw new IllegalArgumentException("La altura introducida es demasiado alta, revisa los valores introducidos");
         } else {
@@ -43,7 +46,11 @@ public class HealthCalcImpl implements HealthCalc {
     }
 
 	@Override
-	public float basalMetabolicRate(float weight, int height, Gender genero, int age) throws Exception {
+	public float basalMetabolicRate(Person person) throws Exception {
+		float height= person.height();
+        Gender genero= person.gender();
+        float weight= person.weight();
+        int age= person.age();
 		if (20 > weight || weight > 650) {
         	throw new IllegalArgumentException("valor de peso incorrecto (solo se aceptaran valores dentro del umbral 20kg<X<650kg)");
 		} else if (40 > height || height > 275) {
@@ -61,5 +68,10 @@ public class HealthCalcImpl implements HealthCalc {
         	else {throw new IllegalArgumentException("valores introducidos no son adecuados para el calculo");}	
         }	
         }
+	}
+
+	public float basalMetabolicRate(persona_pac persona_pac) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }

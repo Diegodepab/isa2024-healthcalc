@@ -19,7 +19,14 @@ public class America_Version_HealthCalc extends Decorator_HealthCalc {
     public double bmr(Gender genero, int edad, float altura, int peso) {
         int alturaMetros = convertirPiesAMetros(altura);
         int pesoGramos = convertirLibrasAGramos(peso);
-        return calcu.bmr(genero, edad, alturaMetros, pesoGramos);
+        try {
+			return calcu.bmr(genero, edad, alturaMetros, pesoGramos);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return 0;
+		}
+		
     }
 
     @Override

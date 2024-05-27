@@ -77,7 +77,14 @@ public class Proxy_Registro_HealthCalc implements HealthHospital, HealthStats{
         } else {
         	numSexoM=1+numSexoM;
         }
-		double bmr = calcu.bmr(genero, edad, altura, peso);
+		double bmr;
+		try {
+			bmr = calcu.bmr(genero, edad, altura, peso);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return 0;
+		}
 		lista_altura.add((float) altura);
 		lista_edad.add((int) edad);
 		lista_peso.add((float) peso);

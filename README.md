@@ -465,13 +465,13 @@ En cuanto al **tipo o categoría de refactorización**, se puede clasificar en f
 En esta práctica toca aplicar los refactorings correspondientes para adaptar la implementación actual de la calculadora al siguiente esquema.
 
 <p align="center">
-  <img src="https://github.com/Diegodepab/isa2024-healthcalc/blob/practica6/design_patterns/Esquema_pracitca7.png" width="1000" title="decorador">
+  <img src="https://github.com/Diegodepab/isa2024-healthcalc/blob/practica7/Images/Esquema_pracitca7.png" width="1000" title="decorador">
 </p>
 
 NOTA: tanto CardiovascularMetrics, como MetabolicMetrics, son interfaces
 
 <a name="refactoring1"> </a>
-## refactoring1 <<enum>> Gender 
+## refactoring1 << enum >> Gender 
   - **Bad smells:**  [obsesión primitiva (Primitive Obsession)](https://refactoring.guru/smells/primitive-obsession))
   - **El refactorings aplicados para resolverlo:** Remplazar dato del tipo valor por un objeto (Replace Data Value with Object)
   - **tipo o categoría de refactorización:** Refactorización de clases (Class Refactoring)

@@ -17,10 +17,12 @@ public class Adapter_HealthCalc implements HealthHospital{
 		float altura_cm = altura * 100; 
 		float indice_Metabolico_Basal = 0;
 		try {
-			indice_Metabolico_Basal = calcu.basalMetabolicRate(peso_kg, (int) altura_cm, genero, edad);
+			indice_Metabolico_Basal = calcu.basalMetabolicRate(new persona_pac(peso_kg, altura_cm, edad, genero));
 		} catch (Exception e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
         return (double) indice_Metabolico_Basal;
 	}
 
@@ -28,7 +30,7 @@ public class Adapter_HealthCalc implements HealthHospital{
 	public int pesoIdeal(Gender genero, float altura) {
 		float altura_cm = altura * 100; 
         try {
-			return (int) calcu.idealWeight((int) altura_cm, genero);
+			return (int) calcu.idealWeight(new persona_pac(altura_cm, genero));
 		} catch (Exception e) {
 			e.printStackTrace();
 			return 0;

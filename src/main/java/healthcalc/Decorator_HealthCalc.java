@@ -10,7 +10,13 @@ public class Decorator_HealthCalc implements HealthHospital{
 
 	@Override
 	public double bmr(Gender genero, int edad, float altura, int peso) {
-		return calcu.bmr(genero, edad, altura, peso);
+		try {
+			return calcu.bmr(genero, edad, altura, peso);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return 0;
+		}
 	}
 
 	@Override
